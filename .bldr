@@ -1,38 +1,32 @@
 [
   {
-    "id": 104066,
+    "id": 66589,
     "context": "contentBuilder",
-    "bldrId": "ad36b7b8-4a33-45b8-9aa3-bc5ed5d428ab",
-    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_api.html"
+    "bldrId": "28c8e7ff-3274-41b2-954b-2ff9480c0d63",
+    "folderPath": "Content Builder/bldr_package_assets/Postman Demo - HTML Email 5.html"
   },
   {
-    "id": 104067,
+    "id": 69326,
     "context": "contentBuilder",
-    "bldrId": "b18ec142-30cd-43b8-bd2d-bbd926e0b6d7",
-    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_oauth.html"
+    "bldrId": "bdd3c409-134d-4aba-b30e-f7707c4adae2",
+    "folderPath": "Content Builder/bldr_package_assets/htmlblock.html"
   },
   {
-    "id": 104068,
+    "id": 90460,
     "context": "contentBuilder",
-    "bldrId": "f04c031f-dad8-4499-b5b5-faec723533a5",
-    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_util.html"
+    "bldrId": "85eacf68-4618-4a4a-b946-6db32a15c780",
+    "folderPath": "Content Builder/bldr_package_assets/bldr-test.html"
   },
   {
-    "id": 104069,
+    "id": 99049,
     "context": "contentBuilder",
-    "bldrId": "1914686a-3aa4-4cfc-b8c3-c6fc6421b445",
-    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_wsproxy.html"
+    "bldrId": "0740602c-49e3-40c1-bb86-89c5d04af364",
+    "folderPath": "Content Builder/bldr_package_assets/htmlblock 2.html"
   },
   {
-    "id": 104070,
+    "id": 99050,
     "context": "contentBuilder",
-    "bldrId": "937d9012-ce81-4d3b-a752-4bd86e9c06a5",
-    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/config/_api_config.html"
-  },
-  {
-    "id": 104071,
-    "context": "contentBuilder",
-    "bldrId": "a4829d77-4d85-4f2e-ae06-cc5d73d16b09",
-    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/ssjs_dataExtensions.html"
+    "bldrId": "efa26980-8eb3-4166-9559-e0f29f4cf3c9",
+    "folderPath": "Content Builder/bldr_package_assets/htmlblock 3.html"
   }
 ]

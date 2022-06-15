@@ -1,106 +1,155 @@
 {
-  "packageName": "bldr_ssjs_lib",
-  "sfmcConfig": {
-    "client_id": "",
-    "client_secret": "",
-    "authentication_uri": "",
-    "rest_uri": "",
-    "parentMID": ""
-  },
+  "packageName": "dep_deploy_test",
   "contentBuilder": {
     "folders": [
       {
-        "folderPath": "Content Builder/bldr_ssjs_lib"
-      },
-      {
-        "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes"
-      },
-      {
-        "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/config"
+        "folderPath": "Content Builder/bldr_package_assets"
       }
     ],
     "assets": [
       {
-        "bldrId": "ad36b7b8-4a33-45b8-9aa3-bc5ed5d428ab",
-        "name": "_ssjs_api",
+        "bldrId": "28c8e7ff-3274-41b2-954b-2ff9480c0d63",
+        "name": "Postman Demo - HTML Email 5",
         "assetType": {
-          "id": 220,
-          "name": "codesnippetblock",
-          "displayName": "Code Snippet Block"
+          "id": 208,
+          "name": "htmlemail",
+          "displayName": "HTML Email"
         },
         "category": {
-          "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes"
+          "folderPath": "Content Builder/bldr_package_assets"
         },
-        "content": "<script runat=\"server\">\n  Platform.Load(\"core\", \"1.1.1\");\n\n  var apiConfig = {\n    authBase:\"authentication_uri\",\n    restBase:\"rest_uri\",\n    contentType:\"application/json\",\n    grantType:\"client_credentials\",\n    mid: \"parentMID\",\n    clientID:\"client_id\",\n    clientSecret:\"client_secret\"\n  }\n\n  function api() {\n\n    var fn = { }\n\n  fn.auth = function(config) {\n        if (!config) { return 'configuration required'; }\n  if (!config.clientID) { return 'clientID required'; }\n  if (!config.clientSecret) { return 'clientSecret required'; }\n  if (!config.grantType) { return 'grantType required'; }\n  if (!config.authBase) { return 'authBase required'; }\n  if (!config.mid) { return 'account mid required'; }\n\n  var authPayload = {\n    client_id: config.clientID,\n  client_secret: config.clientSecret,\n  grant_type: config.grantType,\n  account_id: config.mid\n        }\n\n  try {\n            var req = new Script.Util.HttpRequest(config.authBase + \"v2/token\");\n  req.emptyContentHandling = 0;\n  req.retries = 2;\n  req.continueOnError = true;\n  req.contentType = \"application/json\"\n  req.method = \"POST\";\n  req.postData = Stringify(authPayload);\n\n  var resp = req.send();\n  var resultStr = String(resp.content);\n  var resultJSON = Platform.Function.ParseJSON(resultStr);\n\n  var response = resultJSON[\"Response\"][0];\n  var accessToken = resultJSON.access_token;\n\n  return accessToken;\n\n        } catch (err) {\n            return err\n        }\n    }\n\n\n  fn.scriptUtil = function(config, accessToken) {\n    if (!config) { return 'configuration is reqired' }\n    if (!config.url) { return 'configuration url is required' }\n    if (!accessToken) { return 'unauthenticated' }\n\n  try {\n            var req = new Script.Util.HttpRequest(config.url);\n  req.emptyContentHandling = 0;\n  req.retries = 2;\n  req.continueOnError = true;\n  req.contentType = \"application/json\"\n  req.method = \"GET\";\n  req.setHeader(\"Authorization\", \"Bearer \" + accessToken);\n\n  var resp = req.send();\n  var resultStr = String(resp.content);\n  var resultJSON = Platform.Function.ParseJSON(resultStr);\n\n  return resultJSON;\n        } catch (err) {\n            return err\n        };\n    }\n\n</script>"
+        "views": {
+          "html": {
+            "content": "%%=[\r\nset @lookup = Lookup('ef961d6b-424e-4067-9191-b153e955d316', 'test', 'EmailName')\r\n\r\n]=%%\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n    <style type=\"text/css\">\r\n        div,\r\n        p,\r\n        a,\r\n        li,\r\n        td {\r\n            -webkit-text-size-adjust: none;\r\n        }\r\n        \r\n        body {\r\n            margin: 0;\r\n            padding: 0;\r\n        }\r\n        \r\n        td[class=\"headercell-phone\"] {\r\n            display: none;\r\n        }\r\n        \r\n        @media screen and (max-width: 480px) {\r\n            table[class=\"tmp--container\"] {\r\n                width: 360px !important;\r\n            }\r\n            table[class=\"tmp--container-padding\"] {\r\n                width: 360px !important;\r\n                padding: 20px !important;\r\n            }\r\n            table[class=\"tmp--container-padding-top\"] {\r\n                width: 360px !important;\r\n                padding: 20px 0 0 0 !important;\r\n            }\r\n            table[class=\"tmp--container-padding-bottom\"] {\r\n                width: 360px !important;\r\n                padding: 0 0 20px 0 !important;\r\n            }\r\n            table[class=\"hero\"] {\r\n                width: 100% !important;\r\n            }\r\n            table[class=\"tmp--full-width\"] {\r\n                width: 100% !important;\r\n                float: left !important;\r\n                padding: 0 !important;\r\n            }\r\n            td[class=\"tmp--full-width\"] {\r\n                width: 100% !important;\r\n                float: left !important;\r\n                padding: 0 !important;\r\n            }\r\n            td[class=\"tmp--full-width-padding-bottom\"] {\r\n                width: 100% !important;\r\n                float: left !important;\r\n                padding: 0 0 25px 0 !important;\r\n            }\r\n            td[class=\"tmp--full-width-center\"] {\r\n                width: 100% !important;\r\n                float: left !important;\r\n                padding: 10px 0 10px 0 !important;\r\n                text-align: center !important;\r\n            }\r\n            table[class=\"wrapper-padding\"] {\r\n                padding: 20px !important;\r\n            }\r\n            tr[class=\"wrapper-padding\"] {\r\n                padding: 20px !important;\r\n            }\r\n            td[class=\"wrapper-padding\"] {\r\n                padding: 20px !important;\r\n            }\r\n            td[class=\"col-padding-bottom\"] {\r\n                padding: 0 0 25px 0 !important;\r\n            }\r\n            img[class=\"photo\"] {\r\n                width: 100% !important;\r\n                height: auto !important;\r\n            }\r\n            td[class=\"row\"] {\r\n                width: 100% !important;\r\n            }\r\n            td[class=\"tmp--hide\"] {\r\n                display: none !important;\r\n            }\r\n        }\r\n    </style>\r\n</head>\r\n\r\n<!-- background color -->\r\n\r\n<body bgcolor=\"#ffffff\">\r\n\r\n    <!-- background color -->\r\n    <table bgcolor=\"#ffffff\" width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\r\n        <tr>\r\n            <td>\r\n                <!-- logo content area-->\r\n                <table style='background-color:#6c5e91;' class='tmp--container' width='600' align='center' border='0' cellspacing='0' cellpadding='0'>\r\n                    <tr>\r\n                        <td width='100%' style='padding:20px 25px 20px 25px;'>\r\n                            <center><img width='250' id='style-header-logo' src='https://s3-us-west-2.amazonaws.com/rd-industry-emails/healthcare-life-sciences/makana/branding-assets/email-templates/branding-MakanaHealth-logo-header-gray-2x.png'></center>\r\n                        </td>\r\n                    </tr>\r\n                </table>\r\n                <!-- end content area -->\r\n\r\n\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n                <!-- content area -->\r\n                <div data-type=\"slot\" data-key=\"cell2\"></div>\r\n                <!-- end content area -->\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n                <!-- content area -->\r\n                <div data-type=\"slot\" data-key=\"cell3\"></div>\r\n                <!-- end content area -->\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n                <!-- content area -->\r\n                <div data-type=\"slot\" data-key=\"cell4\"></div>\r\n                <!-- end content area -->\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n                <!-- content area -->\r\n                <div data-type=\"slot\" data-key=\"cell5\"></div>\r\n                <!-- end content area -->\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n                <!-- content area -->\r\n                <div data-type=\"slot\" data-key=\"cell6\"></div>\r\n                <!-- end content area -->\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n                <!-- content area -->\r\n                <div data-type=\"slot\" data-key=\"cell7\"></div>\r\n                <!-- end content area -->\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n\r\n\r\n                <!-- footer content area -->\r\n                <table style='background-color:#6c5e91;' class='tmp--container' width='600' align='center' border='0' cellspacing='0' cellpadding='0'>\r\n                    <tr>\r\n                        <td class='tmp--full-width-center' width='100%' align='center' style='padding:25px 20px 0 20px;'><img width='50' id='style-footer-logo' src='https://s3-us-west-2.amazonaws.com/rd-industry-emails/healthcare-life-sciences/makana/branding-assets/email-templates/branding-MakanaHealth-logo-footer-gray-2x.png'></td>\r\n                    </tr>\r\n                    <tr>\r\n                      <td>\r\n                        %%=ContentBlockByName(\"28c8e7ff-3274-41b2-954b-2ff9480c0d63\")=%%\r\n                      </td>\r\n                    </tr>\r\n                </table>\r\n                %%=ContentBlockById('28c8e7ff-3274-41b2-954b-2ff9480c0d63')=%%\r\n                \r\n                <table style='background-color:#6c5e91;' class='tmp--container' width='600' align='center' border='0' cellspacing='0' cellpadding='0'>\r\n                    <tr>\r\n                        <td style='color:#ffffff;font-family:Gotham, Arial, sans-serif;font-size:11px;font-style:normal;font-weight:normal;padding:20px 20px 10px 20px;' class='tmp--full-width-center' width='100%' align='center' width='432'><a href=\"%%view_email_url%%\" alias=\"Web Version\" target=\"_blank\" style=\"color:#ffffff;text-decoration:none;\">View as a Webpage</a>\r\n                          \r\n                        </td>\r\n                    </tr>\r\n                    <tr>\r\n                        <td style='color:#ffffff;font-family:Gotham, Arial, sans-serif;font-size:11px;font-style:normal;font-weight:normal;padding:10px 20px 20px 20px;' class='tmp--full-width-center' width='100%' align='center' width='432'>%%Member_Busname%%\r\n                            <br />%%Member_Addr%% %%Member_City%%, %%Member_State%%, %%Member_PostalCode%%, %%Member_Country%%.\r\n                            <br />\r\n                        </td>\r\n                    </tr>\r\n                    <tr>\r\n                        <td style=\"font-family:Gotham, Helvetica, Arial, sans-serif; text-align:center; color:#ffffff; font-size:11px; font-weight:bold; line-height:14px; padding:0 25px 15px 25px;\">\r\n                            <img width=\"30\" src=\"https://s3-us-west-2.amazonaws.com/rd-industry-emails/healthcare-life-sciences/makana/branding-assets/email-templates/branding-MakanaHealth-social-icon-website-white.png\" style=\"padding:0px 5px;\" />\r\n                            <img width=\"30\" src=\"https://s3-us-west-2.amazonaws.com/rd-industry-emails/healthcare-life-sciences/makana/branding-assets/email-templates/branding-MakanaHealth-social-icon-facebook-white.png\" style=\"padding:0px 5px;\" />\r\n                            <img width=\"30\" src=\"https://s3-us-west-2.amazonaws.com/rd-industry-emails/healthcare-life-sciences/makana/branding-assets/email-templates/branding-MakanaHealth-social-icon-twitter-white.png\" style=\"padding:0px 5px;\" />\r\n                            <img width=\"30\" src=\"https://s3-us-west-2.amazonaws.com/rd-industry-emails/healthcare-life-sciences/makana/branding-assets/email-templates/branding-MakanaHealth-social-icon-instagram-white.png\" style=\"padding:0px 5px;\" />\r\n                        </td>\r\n                    </tr>\r\n                </table>\r\n                <table style='background-color:#6c5e91;' class='tmp--container' width='600' border='0' align='center' cellpadding='0' cellspacing='0'>\r\n                    <tr>\r\n                        <td style=\"font-family:Gotham, Helvetica, Arial, sans-serif;text-align:center;color:#ffffff;font-size:11px;font-style:normal;font-weight:normal;line-height:14px;padding:0 25px 35px 25px;\">\r\n                            <a href=\"%%profile_center_url%%\" alias=\"Profile Center\" target=\"_blank\" style=\"color:#ffffff;text-decoration:none;\">Profile Center</a> <span style=\"color:#aa95d1; padding:0 5px;\">|</span>\r\n                            <a href=\"%%subscription_center_url%%\" alias=\"Manage Subscriptions\" target=\"_blank\" style=\"color:#ffffff;text-decoration:none;\">Manage Subscriptions\r\n                  </a> <span style=\"color:#aa95d1; padding:0 5px;\">|</span>\r\n                            <a target=\"_blank\" href=\"%%unsub_center_url%%\" alias=\"Unsubscribe\" title=\"Unsubscribe\" style=\"color:#ffffff;text-decoration:none;\">Unsubscribe\r\n                  </a>\r\n                        </td>\r\n                    </tr>\r\n                </table>\r\n                <!-- end content area -->\r\n\r\n\r\n            </td>\r\n        </tr>\r\n    </table>\r\n\r\n    <div id=\"tracking_pixel\">\r\n        <custom name=\"opencounter\" type=\"tracking\">\r\n    </div>\r\n    <div id=\"campaign_pixel\">\r\n    </div>\r\n</body>\r\n\r\n</html>",
+            "availableViews": [],
+            "data": {
+              "email": {
+                "options": {
+                  "generateFrom": ""
+                }
+              }
+            },
+            "modelVersion": 2
+          }
+        },
+        "dependencies": [
+          "ef961d6b-424e-4067-9191-b153e955d316"
+        ]
       },
       {
-        "bldrId": "b18ec142-30cd-43b8-bd2d-bbd926e0b6d7",
-        "name": "_ssjs_oauth",
+        "bldrId": "bdd3c409-134d-4aba-b30e-f7707c4adae2",
+        "name": "htmlblock",
         "assetType": {
-          "id": 220,
-          "name": "codesnippetblock",
-          "displayName": "Code Snippet Block"
+          "id": 197,
+          "name": "htmlblock",
+          "displayName": "HTML Block"
         },
         "category": {
-          "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes"
+          "folderPath": "Content Builder/bldr_package_assets"
         },
-        "content": "<script runat=\"server\">\nPlatform.Load(\"core\", \"1.1.1\");\n\nfunction oauth() {\n\n    var fn = {}\n\n    \n\n    return fn\n}\n\n\n\n</script>"
+        "content": "<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" role=\"presentation\" style=\"min-width: 100%; \" class=\"stylingblock-content-wrapper\"><tr><td class=\"stylingblock-content-wrapper camarker-inner\"><div>\n <h1>\n   This is an HTML Block\n  </h1> \n</div></td></tr></table>",
+        "meta": {
+          "wrapperStyles": {
+            "mobile": {
+              "visible": true
+            },
+            "styling": {}
+          }
+        }
       },
       {
-        "bldrId": "f04c031f-dad8-4499-b5b5-faec723533a5",
-        "name": "_ssjs_util",
+        "bldrId": "85eacf68-4618-4a4a-b946-6db32a15c780",
+        "name": "bldr-test",
         "assetType": {
           "id": 220,
           "name": "codesnippetblock",
           "displayName": "Code Snippet Block"
         },
         "category": {
-          "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes"
+          "folderPath": "Content Builder/bldr_package_assets"
         },
-        "content": "<script runat=\"server\">\nPlatform.Load(\"core\", \"1.1.1\");\n\nfunction util() {\n    var fn = {}\n\n    fn.isArray = function(arg) {\n        return Object.prototype.toString.call(arg) === '[object Array]';\n    }\n    \n    \n    fn.response = function(arg) {\n        Write(Stringify(arg))\n    }\n\n\n    fn.proxyContext = function(prox, mid) {\n        if (mid) {\n            //reset previous settings\n            prox.resetClientIds();\n            // Set ClientID \n            prox.setClientId({\n                \"ID\": mid\n            });\n        }\n        return prox\n    }\n\n\n    fn.deBug = function(action, response, logExtKey, debug) {\n        if (response) {\n            debug ? Write(\"<br><b>\" + action + \":</b><br> \" + Stringify(response) + \"<br><br>\") : null;\n        } else {\n            debug ? Write(\"<br><b>\" + action + \"</b><br> \") : null;\n        }\n\n        if (logExtKey) {\n            var log = {\n                action: action ? action : null,\n                log: response ? response : null\n            }\n\n            addLog(log, logExtKey);\n        }\n    }\n\n\n    /***********************************************\n     *\n     *   function addLog()\n     *   Pushes logging object to array to be written to a Data Extension\n     *   \n     *    @param obj {Object} logging object that matches the data extension\n     *    @param logExtKey {String} External Key to log records to\n     *    \n     ***********************************************/\n    fn.addLog = function(obj, logExtKey) {\n        var logDE = DataExtension.Init(logExtKey);\n        var logAction = logDE.Rows.Add(obj);\n    };\n\n\n    /***********************************************\n     * \n     * function getDataExtensionKey()\n     * Retieves the External Key for a SFMC Data Extension\n     * \n     * @param name {String} Name of the data extension\n     * @return {string} External Key of data extension\n     * \n     ***********************************************/\n    fn.getDataExtensionKey = function(name) {\n        var de = DataExtension.Retrieve({\n            Property: \"Name\",\n            SimpleOperator: \"equals\",\n            Value: name\n        });\n\n        var logKey = de[0].CustomerKey;\n\n        return logKey;\n    }\n\n\n    /***********************************************\n     * \n     * getFolderByName Function\n     * @name {string} - name of data extension to retrieve\n     * @contentType {string} - SFMC context: dataextension, ssjsactivity, asset,etc\n     * \n    ***********************************************/\n    fn.getFolderIDByName = function(config) {\n\n    if(!config.name) {\n        return 'folder name required'\n    }\n\n    if(!config.contentType) {\n        return 'contentType is required'\n    }\n\n\n    if(!config.parentFolderName){\n        var folderFilter = {\n            LeftOperand: {\n              Property: \"Name\",\n              SimpleOperator: \"equals\",\n              Value: config.name\n            },\n            LogicalOperator: \"AND\",\n            RightOperand: {\n              Property: \"ContentType\",\n              SimpleOperator: \"equals\",\n              Value: config.contentType\n            }\n          }\n    } else {\n        var folderFilter = {\n            LeftOperand: {\n              Property: \"Name\",\n              SimpleOperator: \"equals\",\n              Value: config.name\n            },\n            LogicalOperator: \"AND\",\n            RightOperand: {\n                LeftOperand: {\n                    Property: \"ParentFolder.Name\",\n                    SimpleOperator: \"equals\",\n                    Value: config.parentFolderName\n                  },\n                  LogicalOperator: \"AND\",\n                  RightOperand: {\n                    Property: \"ContentType\",\n                    SimpleOperator: \"equals\",\n                    Value: config.contentType\n                  }\n            }\n          }\n    }\n\n\n    var folderConfig = {\n      soapObjName: \"DataFolder\",\n      cols:[\"Name\", \"ID\", \"ParentFolder.ID\", \"ContentType\", \"ParentFolder.Name\",\"ObjectID\"],\n      filter: folderFilter\n    }\n\n    if(config.mid){\n        folderConfig.mid = config.mid\n    }\n\n    var res = wsRetrieve(folderConfig);\n    var folderID = res.Results[0].ID;\n    return folderID\n  }\n\n    \n    fn.queryStringToJSON = function(url) {\n        var query = url.split('?')[1] \n        var pairs = query.split('&');\n        \n        var result = {};\n        for(var q = 0; q < pairs.length; q++){\n            pair = pairs[q].split('=');\n            result[pair[0]] = decodeURIComponent(pair[1] || '');\n        }\n\n        return result;\n    }\n    \n    return fn\n}\n\n</script>"
+        "content": "test"
       },
       {
-        "bldrId": "1914686a-3aa4-4cfc-b8c3-c6fc6421b445",
-        "name": "_ssjs_wsproxy",
+        "bldrId": "0740602c-49e3-40c1-bb86-89c5d04af364",
+        "name": "htmlblock 2",
         "assetType": {
-          "id": 220,
-          "name": "codesnippetblock",
-          "displayName": "Code Snippet Block"
+          "id": 197,
+          "name": "htmlblock",
+          "displayName": "HTML Block"
         },
         "category": {
-          "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes"
+          "folderPath": "Content Builder/bldr_package_assets"
         },
-        "content": "<script runat=\"server\">\nPlatform.Load(\"core\", \"1.1.1\");\n\n/******\n    ws.retrieve\n    var config = {\n        soapObjName: \"\", //required\n        cols: [], //required\n        mid: \"\", //optional\n        filter: {}, //optional\n        opts: {}, //optional\n        props: {} //optional\n    }\n\n    ws.create\n    var config = {\n        soapObjName: \"\", //required\n        payload: {}, //required\n        mid: \"\" //optional\n    }\n\n    ws.update\n    var config = {\n        soapObjName: \"\", //required\n        payload: {}, //required\n        options: {} //required\n    }\n\n    ws.perform\n    var config = {\n        soapObjName: \"\", //required\n        payload: {}, //required\n        options: {} //required\n    }\n ******/\nfunction wsproxy() {\n    var prox = new Script.Util.WSProxy();\n    var fn = {};\n\n    /*******************************\n     * @config {Object}\n     * @continueRequest {Boolean}\n     * @return {Array}\n     ******************************/\n    fn.retrieve = function(config, continueRequest) {\n\n        var reqID;\n        var moreData = true;\n        var continueRequest = continueRequest ? continueRequest : false;\n        var obj = config.soapObjName ? config.soapObjName : null;\n        var opts = config.opts ? config.opts : {};\n        var props = config.props ? config.props : {};\n        var filter = config.filter ? config.filter : {};\n        var cols = config.cols ? config.cols : null;\n        var mid = config.mid ? config.mid : null;\n        prox = mid ? util.proxyContext(prox, mid) : prox;\n\n        if (!config) { return 'configuration required'; }\n        if (!obj) { return 'SOAP object is required'; }\n\n        var resultsOut = [];\n\n        // my script to set the values for function\n        while (moreData) {\n            moreData = false;\n            if (reqID == null) {\n                if (filter) {\n                    var data = prox.retrieve(obj, cols, filter, opts, props);\n                } else {\n                    var data = prox.retrieve(obj, cols);\n                }\n            } else {\n                var data = prox.getNextBatch(obj, reqID);\n            }\n\n            if (data != null) {\n\n                if (continueRequest) {\n                    moreData = data.HasMoreRows;\n                    reqID = data.RequestID;\n                }\n\n                //my script to interact with results\n                if (data && data.Results) {\n                    for (var i = 0; i < data.Results.length; i++) {\n                        resultsOut.push(data.Results[i]);\n                    }\n                }\n            }\n        }\n\n\n        var res = {\n            results: resultsOut\n        }\n        return res\n    } // end retreive\n\n\n    /*******************************\n     * @config {Object}\n     * @return {Object}\n     ******************************/\n    fn.create = function(config) {\n        var obj = config.soapObjName ? config.soapObjName : null;\n        var payload = config.payload ? config.payload : null;\n        var mid = config.mid ? config.mid : null;\n        prox = mid ? util.proxyContext(prox, mid) : prox;\n\n        if (!config) { return 'configuration required'; }\n        if (!obj) { return 'configuration required'; }\n        if (!payload) { return 'payload is required'; }\n\n        var batch = util.isArray(payload);\n\n        if (batch) {\n            var res = prox.createBatch(obj, payload);\n        } else {\n            var res = prox.createItem(obj, payload);\n        }\n\n        return res;\n    } // end create\n\n    /*******************************\n     * @config {Object}\n     * @return {Object}\n     ******************************/\n    fn.update = function(config) {\n        var obj = config.soapObjName ? config.soapObjName : null;\n        var payload = config.payload ? config.payload : null;\n        var options = config.options ? config.options : null;\n        var mid = config.mid ? config.mid : null;\n        prox = mid ? util.proxyContext(prox, mid) : prox;\n\n        if (!config) { return 'configuration required'; }\n        if (!obj) { return 'SOAP object is required'; }\n        if (!payload) { return 'payload is required'; }\n\n        var batch = util.isArray(payload);\n\n        if (batch) {\n            var res = prox.updateBatch(obj, payload, options);\n        } else {\n            var res = prox.updateItem(obj, payload, options);\n        }\n\n        return res;\n    } // end update\n\n\n    /*******************************\n     * @config {Object}\n     * @return {Object}\n     ******************************/\n    fn.perform = function(config) {\n        var obj = config.soapObjName ? config.soapObjName : null;\n        var props = payload.props ? payload.props : {};\n        var action = payload.action ? payload.action : {};\n        var opts = payload.opts ? payload.opts : {};\n\n        var mid = config.mid ? config.mid : null;\n        prox = mid ? util.proxyContext(prox, mid) : prox;\n\n        if (!config) { return 'configuration required'; }\n        if (!obj) { return 'SOAP object is required'; }\n        if (!payload) { return 'payload is required'; }\n\n        var res = prox.performItem(obj, props, action, opts);\n        return res;\n    } // end perform\n\n    return fn\n}\n\n</script>\n"
+        "content": "<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" role=\"presentation\" style=\"min-width: 100%; \" class=\"stylingblock-content-wrapper\"><tr><td class=\"stylingblock-content-wrapper camarker-inner\"><div>\n <h1>\n   This is an HTML Block\n  </h1> \n</div></td></tr></table>",
+        "meta": {
+          "wrapperStyles": {
+            "mobile": {
+              "visible": true
+            },
+            "styling": {}
+          }
+        }
       },
       {
-        "bldrId": "937d9012-ce81-4d3b-a752-4bd86e9c06a5",
-        "name": "_api_config",
+        "bldrId": "efa26980-8eb3-4166-9559-e0f29f4cf3c9",
+        "name": "htmlblock 3",
         "assetType": {
-          "id": 220,
-          "name": "codesnippetblock",
-          "displayName": "Code Snippet Block"
+          "id": 197,
+          "name": "htmlblock",
+          "displayName": "HTML Block"
         },
         "category": {
-          "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/config"
+          "folderPath": "Content Builder/bldr_package_assets"
         },
-        "content": "<script runat=\"server\">\nPlatform.Load(\"core\", \"1.1.1\");\n/***********************************************\n*   \n*   // To use these functions within your script use the\n*   // the following two lines to initialize the apiConfig settings\n*   // and set your accessToken variable.\n*   \n*   var apiConfig = getAPIConfig();\n*   var accessToken = auth(apiConfig, debug, runID); \n***********************************************/\n\n/***********************************************\n*\n*   function getAPIConfig()\n*   Sets all Credentials for RestAPI\n*\n***********************************************/\n\n  function getAPIConfig() {\n    return {\n      authBase:\"authentication_uri\",\n      restBase:\"rest_uri\",\n      contentType:\"application/json\",\n      grantType:\"client_credentials\",\n      mid: \"parentMID\",\n      clientID:\"client_id\",\n      clientSecret:\"client_secret\"\n    };\n  };\n\n</script>"
-      },
-      {
-        "bldrId": "a4829d77-4d85-4f2e-ae06-cc5d73d16b09",
-        "name": "ssjs_dataExtensions",
-        "assetType": {
-          "id": 220,
-          "name": "codesnippetblock",
-          "displayName": "Code Snippet Block"
-        },
-        "category": {
-          "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes"
-        },
-        "content": "<script runat=\"server\">\nPlatform.Load(\"core\", \"1.1.1\");\n\nfunction dataExtensions() {\n    var fn = {}\n    \n    fn.search = function(filter, mid){\n        var config = {\n            soapObjName: 'DataExtension',\n            cols: ['Name','CustomerKey'],\n            filter: filter\n        }\n\n        if(mid){\n            config.mid = mid;\n        }\n\n        var resp = ws.retrieve(config)\n        \n       return resp\n    }\n\n    return fn\n}\n</script>"
+        "content": "<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" role=\"presentation\" style=\"min-width: 100%; \" class=\"stylingblock-content-wrapper\"><tr><td class=\"stylingblock-content-wrapper camarker-inner\"><div>\n <h1>\n   This is an HTML Block\n  </h1> \n</div></td></tr></table>",
+        "meta": {
+          "wrapperStyles": {
+            "mobile": {
+              "visible": true
+            },
+            "styling": {}
+          }
+        }
       }
     ]
   },
-  "dependencies": {},
-  "automationStudio": {},
-  "dataExtension": {}
+  "dataExtension": {
+    "folders": [
+      {
+        "folderPath": "Data Extensions/DeployTest"
+      }
+    ],
+    "assets": [
+      {
+        "name": "test",
+        "customerKey": "test",
+        "description": "",
+        "fields": [
+          {
+            "partnerKey": "",
+            "name": "test",
+            "defaultValue": "",
+            "maxLength": 50,
+            "isRequired": true,
+            "ordinal": 0,
+            "isPrimaryKey": false,
+            "fieldType": "Text"
+          }
+        ],
+        "category": {
+          "folderPath": "Data Extensions/DeployTest"
+        },
+        "isSendable": true,
+        "sendableDataExtensionField": {
+          "name": "test",
+          "fieldType": "Text"
+        },
+        "sendableSubscriberField": {
+          "name": "Subscriber Key"
+        },
+        "bldrId": "ef961d6b-424e-4067-9191-b153e955d316"
+      }
+    ]
+  }
 }
