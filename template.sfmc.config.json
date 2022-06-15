@@ -2,5 +2,6 @@
   "client_id": "",
   "client_secret": "",
   "authentication_uri": "",
+  "rest_uri": "",
   "parentMID": ""
 }
