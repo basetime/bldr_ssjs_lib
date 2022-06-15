@@ -1,0 +1,38 @@
+[
+  {
+    "id": 104066,
+    "context": "contentBuilder",
+    "bldrId": "ad36b7b8-4a33-45b8-9aa3-bc5ed5d428ab",
+    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_api.html"
+  },
+  {
+    "id": 104067,
+    "context": "contentBuilder",
+    "bldrId": "b18ec142-30cd-43b8-bd2d-bbd926e0b6d7",
+    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_oauth.html"
+  },
+  {
+    "id": 104068,
+    "context": "contentBuilder",
+    "bldrId": "f04c031f-dad8-4499-b5b5-faec723533a5",
+    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_util.html"
+  },
+  {
+    "id": 104069,
+    "context": "contentBuilder",
+    "bldrId": "1914686a-3aa4-4cfc-b8c3-c6fc6421b445",
+    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_wsproxy.html"
+  },
+  {
+    "id": 104070,
+    "context": "contentBuilder",
+    "bldrId": "937d9012-ce81-4d3b-a752-4bd86e9c06a5",
+    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/config/_api_config.html"
+  },
+  {
+    "id": 104071,
+    "context": "contentBuilder",
+    "bldrId": "a4829d77-4d85-4f2e-ae06-cc5d73d16b09",
+    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/ssjs_dataExtensions.html"
+  }
+]
