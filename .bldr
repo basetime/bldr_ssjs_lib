@@ -1,38 +1,37 @@
 [
   {
-    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/_ssjs_api.js",
-    "bldrId": "ac5476c6-587f-4f48-8567-ba63a00a92f3",
-    "id": 104740,
-    "context": "contentBuilder"
+    "id": 66589,
+    "context": "contentBuilder",
+    "bldrId": "7a8ab1ce-928b-4901-badc-422af6b6e75d",
+    "folderPath": "Content Builder/bldr_package_assets/Postman Demo - HTML Email 5.html"
   },
   {
-    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/_ssjs_oauth.js",
-    "bldrId": "84d6f425-0a40-4607-94d4-a41064214809",
-    "id": 104741,
-    "context": "contentBuilder"
+    "id": 69326,
+    "context": "contentBuilder",
+    "bldrId": "35d45c39-cf24-4cec-ae8b-ab6b4796daf1",
+    "folderPath": "Content Builder/bldr_package_assets/htmlblock.html"
   },
   {
-    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/_ssjs_util.js",
-    "bldrId": "c36ca2ed-8416-42af-a62a-2318fcca128b",
-    "id": 104742,
-    "context": "contentBuilder"
+    "id": 90460,
+    "context": "contentBuilder",
+    "bldrId": "1f0f6244-0b1a-4f17-9195-b3e72d0e8a99",
+    "folderPath": "Content Builder/bldr_package_assets/bldr-test.html"
   },
   {
-    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/_ssjs_wsproxy.js",
-    "bldrId": "9a69e32f-4746-40fd-b6cf-4cdef320a3f9",
-    "id": 104743,
-    "context": "contentBuilder"
+    "id": 99049,
+    "context": "contentBuilder",
+    "bldrId": "5383a2e6-f0b6-4694-adb2-823febf5ef63",
+    "folderPath": "Content Builder/bldr_package_assets/htmlblock 2.html"
   },
   {
-    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/config/api_config.js",
-    "bldrId": "082654fa-f785-4c58-84e6-322e61aab444",
-    "id": 104744,
-    "context": "contentBuilder"
+    "id": 99050,
+    "context": "contentBuilder",
+    "bldrId": "1131d1a3-8054-4193-96bf-9bad3ad08d0e",
+    "folderPath": "Content Builder/bldr_package_assets/htmlblock 3.html"
   },
   {
-    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/ssjs_dataExtensions.js",
-    "bldrId": "4e6f1db1-fbc1-48a0-8e2a-f96bc83ee335",
-    "id": 104745,
-    "context": "contentBuilder"
+    "context": "dataExtension",
+    "bldrId": "45daf2d5-a7eb-475d-8c26-4d153d5a3a01",
+    "folderPath": "Data Extensions/DeployTest/test.json"
   }
 ]
