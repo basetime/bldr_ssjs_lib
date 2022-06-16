@@ -1,32 +1,38 @@
 [
   {
-    "id": 66589,
-    "context": "contentBuilder",
-    "bldrId": "28c8e7ff-3274-41b2-954b-2ff9480c0d63",
-    "folderPath": "Content Builder/bldr_package_assets/Postman Demo - HTML Email 5.html"
+    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/_ssjs_api.js",
+    "bldrId": "ac5476c6-587f-4f48-8567-ba63a00a92f3",
+    "id": 104740,
+    "context": "contentBuilder"
   },
   {
-    "id": 69326,
-    "context": "contentBuilder",
-    "bldrId": "bdd3c409-134d-4aba-b30e-f7707c4adae2",
-    "folderPath": "Content Builder/bldr_package_assets/htmlblock.html"
+    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/_ssjs_oauth.js",
+    "bldrId": "84d6f425-0a40-4607-94d4-a41064214809",
+    "id": 104741,
+    "context": "contentBuilder"
   },
   {
-    "id": 90460,
-    "context": "contentBuilder",
-    "bldrId": "85eacf68-4618-4a4a-b946-6db32a15c780",
-    "folderPath": "Content Builder/bldr_package_assets/bldr-test.html"
+    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/_ssjs_util.js",
+    "bldrId": "c36ca2ed-8416-42af-a62a-2318fcca128b",
+    "id": 104742,
+    "context": "contentBuilder"
   },
   {
-    "id": 99049,
-    "context": "contentBuilder",
-    "bldrId": "0740602c-49e3-40c1-bb86-89c5d04af364",
-    "folderPath": "Content Builder/bldr_package_assets/htmlblock 2.html"
+    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/_ssjs_wsproxy.js",
+    "bldrId": "9a69e32f-4746-40fd-b6cf-4cdef320a3f9",
+    "id": 104743,
+    "context": "contentBuilder"
   },
   {
-    "id": 99050,
-    "context": "contentBuilder",
-    "bldrId": "efa26980-8eb3-4166-9559-e0f29f4cf3c9",
-    "folderPath": "Content Builder/bldr_package_assets/htmlblock 3.html"
+    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/config/api_config.js",
+    "bldrId": "082654fa-f785-4c58-84e6-322e61aab444",
+    "id": 104744,
+    "context": "contentBuilder"
+  },
+  {
+    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/ssjs_dataExtensions.js",
+    "bldrId": "4e6f1db1-fbc1-48a0-8e2a-f96bc83ee335",
+    "id": 104745,
+    "context": "contentBuilder"
   }
 ]
