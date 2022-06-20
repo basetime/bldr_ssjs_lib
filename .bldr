@@ -1,37 +1,38 @@
 [
   {
-    "id": 66589,
+    "id": 104740,
     "context": "contentBuilder",
-    "bldrId": "7a8ab1ce-928b-4901-badc-422af6b6e75d",
-    "folderPath": "Content Builder/bldr_package_assets/Postman Demo - HTML Email 5.html"
+    "bldrId": "90e2b771-06da-4caa-b046-e882d655f438",
+    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/_ssjs_api.html"
   },
   {
-    "id": 69326,
+    "id": 104741,
     "context": "contentBuilder",
-    "bldrId": "35d45c39-cf24-4cec-ae8b-ab6b4796daf1",
-    "folderPath": "Content Builder/bldr_package_assets/htmlblock.html"
+    "bldrId": "c4df77da-fff0-472f-bb3c-f79cfa18a4ad",
+    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/_ssjs_oauth.html"
   },
   {
-    "id": 90460,
+    "id": 104742,
     "context": "contentBuilder",
-    "bldrId": "1f0f6244-0b1a-4f17-9195-b3e72d0e8a99",
-    "folderPath": "Content Builder/bldr_package_assets/bldr-test.html"
+    "bldrId": "02816c62-f138-4f9d-9fe2-6537b07f81b3",
+    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/_ssjs_util.html"
   },
   {
-    "id": 99049,
+    "id": 104743,
     "context": "contentBuilder",
-    "bldrId": "5383a2e6-f0b6-4694-adb2-823febf5ef63",
-    "folderPath": "Content Builder/bldr_package_assets/htmlblock 2.html"
+    "bldrId": "56571dac-0908-413a-998b-16efc536e462",
+    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/_ssjs_wsproxy.html"
   },
   {
-    "id": 99050,
+    "id": 104744,
     "context": "contentBuilder",
-    "bldrId": "1131d1a3-8054-4193-96bf-9bad3ad08d0e",
-    "folderPath": "Content Builder/bldr_package_assets/htmlblock 3.html"
+    "bldrId": "1b62ace9-32c5-46d8-bfd1-d2f06a9e4172",
+    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/config/api_config.html"
   },
   {
-    "context": "dataExtension",
-    "bldrId": "45daf2d5-a7eb-475d-8c26-4d153d5a3a01",
-    "folderPath": "Data Extensions/DeployTest/test.json"
+    "id": 104745,
+    "context": "contentBuilder",
+    "bldrId": "a6c4d1e4-35d9-4f0c-b5ee-48eff0243e48",
+    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/ssjs_dataExtensions.html"
   }
 ]
