@@ -1,0 +1,29 @@
+{
+  "name": "test",
+  "customerKey": "test",
+  "description": "",
+  "fields": [
+    {
+      "partnerKey": "",
+      "name": "test",
+      "defaultValue": "",
+      "maxLength": 50,
+      "isRequired": true,
+      "ordinal": 0,
+      "isPrimaryKey": false,
+      "fieldType": "Text"
+    }
+  ],
+  "category": {
+    "folderPath": "Data Extensions/DeployTest"
+  },
+  "isSendable": true,
+  "sendableDataExtensionField": {
+    "name": "test",
+    "fieldType": "Text"
+  },
+  "sendableSubscriberField": {
+    "name": "Subscriber Key"
+  },
+  "bldrId": "116bf916-8e23-43af-a326-daa161b620f7"
+}
