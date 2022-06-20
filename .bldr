@@ -1,38 +1,38 @@
 [
   {
-    "id": 104409,
+    "id": 66589,
     "context": "contentBuilder",
-    "bldrId": "4b8a7377-0459-41d1-aa34-52f7022fcabe",
-    "folderPath": "Content Builder/ssjs_lib_for_pkg/ssjs_classes/_ssjs_api.html"
+    "bldrId": "871fd829-3bb6-4e0e-ae2e-d745be198c6b",
+    "folderPath": "Content Builder/bldr_package_assets/Postman Demo - HTML Email 5.html"
   },
   {
-    "id": 104410,
+    "id": 69326,
     "context": "contentBuilder",
-    "bldrId": "4cc0507d-4751-4c23-ae25-03cb63e4cbea",
-    "folderPath": "Content Builder/ssjs_lib_for_pkg/ssjs_classes/_ssjs_oauth.html"
+    "bldrId": "7d17f86c-53c9-49ff-b59a-28897880c35c",
+    "folderPath": "Content Builder/bldr_package_assets/htmlblock.html"
   },
   {
-    "id": 104411,
+    "id": 90460,
     "context": "contentBuilder",
-    "bldrId": "8850bf98-6c3e-4e81-bb39-90d3025f6b4d",
-    "folderPath": "Content Builder/ssjs_lib_for_pkg/ssjs_classes/_ssjs_util.html"
+    "bldrId": "29b1780e-0676-4fdb-9cd6-7f7a6499de31",
+    "folderPath": "Content Builder/bldr_package_assets/bldr-test.html"
   },
   {
-    "id": 104412,
+    "id": 99049,
     "context": "contentBuilder",
-    "bldrId": "5cb6b608-dcbe-450a-a55b-103c75cbb6b7",
-    "folderPath": "Content Builder/ssjs_lib_for_pkg/ssjs_classes/_ssjs_wsproxy.html"
+    "bldrId": "ea7ac17a-2c39-4eae-a4eb-1f2a73e86c94",
+    "folderPath": "Content Builder/bldr_package_assets/htmlblock 2.html"
   },
   {
-    "id": 104413,
+    "id": 99050,
     "context": "contentBuilder",
-    "bldrId": "e41e4d35-4a11-4275-a857-58b0767ed02e",
-    "folderPath": "Content Builder/ssjs_lib_for_pkg/ssjs_classes/config/_api_config.html"
+    "bldrId": "1b153186-deaa-4c42-9b29-8c1f1982e616",
+    "folderPath": "Content Builder/bldr_package_assets/htmlblock 3.html"
   },
   {
-    "id": 104414,
-    "context": "contentBuilder",
-    "bldrId": "635c7729-f461-4f59-8cbf-8e5d790922b2",
-    "folderPath": "Content Builder/ssjs_lib_for_pkg/ssjs_classes/ssjs_dataExtensions.html"
+    "id": "test",
+    "context": "dataExtension",
+    "bldrId": "c9be67ce-c5ae-4e40-968e-8e7a4938673f",
+    "folderPath": "Data Extensions/DeployTest/test.json"
   }
 ]
