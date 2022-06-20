@@ -158,6 +158,9 @@
       },
       {
         "folderPath": "Data Extensions/DeployTest"
+      },
+      {
+        "folderPath": "Data Extensions/DeployTest"
       }
     ],
     "assets": [
@@ -276,6 +279,35 @@
           "name": "Subscriber Key"
         },
         "bldrId": "edc0579a-4786-4b30-9a62-f72b2e91cfbe"
+      },
+      {
+        "name": "test",
+        "customerKey": "test",
+        "description": "",
+        "fields": [
+          {
+            "partnerKey": "",
+            "name": "test",
+            "defaultValue": "",
+            "maxLength": 50,
+            "isRequired": true,
+            "ordinal": 0,
+            "isPrimaryKey": false,
+            "fieldType": "Text"
+          }
+        ],
+        "category": {
+          "folderPath": "Data Extensions/DeployTest"
+        },
+        "isSendable": true,
+        "sendableDataExtensionField": {
+          "name": "test",
+          "fieldType": "Text"
+        },
+        "sendableSubscriberField": {
+          "name": "Subscriber Key"
+        },
+        "bldrId": "2ab1e849-bef2-4498-a48d-cecbc880b4db"
       }
     ]
   }
