@@ -1,0 +1,103 @@
+{
+  "packageName": "bldr_ssjs_lib",
+  "sfmcConfig": {
+    "client_id": "",
+    "client_secret": "",
+    "authentication_uri": "",
+    "rest_uri": "",
+    "parentMID": ""
+  },
+  "contentBuilder": {
+    "folders": [
+      {
+        "folderPath": "Content Builder/stream_demo_ssjs"
+      },
+      {
+        "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes"
+      },
+      {
+        "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/config"
+      }
+    ],
+    "assets": [
+      {
+        "bldrId": "90e2b771-06da-4caa-b046-e882d655f438",
+        "name": "_ssjs_api",
+        "assetType": {
+          "id": 220,
+          "name": "codesnippetblock",
+          "displayName": "Code Snippet Block"
+        },
+        "category": {
+          "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes"
+        },
+        "content": "<script runat=\"server\">\n  Platform.Load(\"core\", \"1.1.1\");\n\n  function api() {\n\n    var fn = {}\n\n    fn.auth = function (config) {\n      if (!config) { return 'configuration required'; }\n      if (!config.clientID) { return 'clientID required'; }\n      if (!config.clientSecret) { return 'clientSecret required'; }\n      if (!config.grantType) { return 'grantType required'; }\n      if (!config.authBase) { return 'authBase required'; }\n      if (!config.mid) { return 'account mid required'; }\n\n      var authPayload = {\n        authBase: \"authentication_uri\",\n        restBase: \"rest_uri\",\n        contentType: \"application/json\",\n        grantType: \"client_credentials\",\n        mid: \"parentMID\",\n        clientID: \"client_id\",\n        clientSecret: \"client_secret\"\n      }\n\n      try {\n        var req = new Script.Util.HttpRequest(config.authBase + \"v2/token\");\n        req.emptyContentHandling = 0;\n        req.retries = 2;\n        req.continueOnError = true;\n        req.contentType = \"application/json\"\n        req.method = \"POST\";\n        req.postData = Stringify(authPayload);\n\n        var resp = req.send();\n        var resultStr = String(resp.content);\n        var resultJSON = Platform.Function.ParseJSON(resultStr);\n\n        var response = resultJSON[\"Response\"][0];\n        var accessToken = resultJSON.access_token;\n\n        return accessToken;\n\n      } catch (err) {\n        return err\n      }\n    }\n\n\n    fn.scriptUtil = function (config, accessToken) {\n      if (!config) { return 'configuration is reqired' }\n      if (!config.url) { return 'configuration url is required' }\n      if (!accessToken) { return 'unauthenticated' }\n\n      try {\n        var req = new Script.Util.HttpRequest(config.url);\n        req.emptyContentHandling = 0;\n        req.retries = 2;\n        req.continueOnError = true;\n        req.contentType = \"application/json\"\n        req.method = \"GET\";\n        req.setHeader(\"Authorization\", \"Bearer \" + accessToken);\n\n        var resp = req.send();\n        var resultStr = String(resp.content);\n        var resultJSON = Platform.Function.ParseJSON(resultStr);\n\n        return resultJSON;\n      } catch (err) {\n        return err\n      };\n    }\n\n    fn.loadS2SConfig = function (client, mid) {\n      if (!client) { return 'client configuration is required' }\n\n      return {\n        authBase: \"https://\" + client.subdomain + \".auth.marketingcloudapis.com/\",\n        restBase: \"https://\" + client.subdomain + \".rest.marketingcloudapis.com/\",\n        clientID: client.s2s.clientID,\n        clientSecret: client.s2s.clientSecret,\n        grantType: \"client_credentials\",\n        mid: !mid ? client.parentMid : mid\n      }\n    }\n    return fn\n  }\n\n\n\n</script>"
+      },
+      {
+        "bldrId": "c4df77da-fff0-472f-bb3c-f79cfa18a4ad",
+        "name": "_ssjs_oauth",
+        "assetType": {
+          "id": 220,
+          "name": "codesnippetblock",
+          "displayName": "Code Snippet Block"
+        },
+        "category": {
+          "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes"
+        },
+        "content": "<script runat=\"server\">\nPlatform.Load(\"core\", \"1.1.1\");\n\nfunction oauth() {\n\n    var fn = {}\n\n    \n\n    return fn\n}\n\n\n\n</script>"
+      },
+      {
+        "bldrId": "02816c62-f138-4f9d-9fe2-6537b07f81b3",
+        "name": "_ssjs_util",
+        "assetType": {
+          "id": 220,
+          "name": "codesnippetblock",
+          "displayName": "Code Snippet Block"
+        },
+        "category": {
+          "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes"
+        },
+        "content": "<script runat=\"server\">\nPlatform.Load(\"core\", \"1.1.1\");\n\nfunction util() {\n    var fn = {}\n\n    fn.isArray = function(arg) {\n        return Object.prototype.toString.call(arg) === '[object Array]';\n    }\n    \n    \n    fn.response = function(arg) {\n        Write(Stringify(arg))\n    }\n\n\n    fn.proxyContext = function(prox, mid) {\n        if (mid) {\n            //reset previous settings\n            prox.resetClientIds();\n            // Set ClientID \n            prox.setClientId({\n                \"ID\": mid\n            });\n        }\n        return prox\n    }\n\n\n    fn.deBug = function(action, response, logExtKey, debug) {\n        if (response) {\n            debug ? Write(\"<br><b>\" + action + \":</b><br> \" + Stringify(response) + \"<br><br>\") : null;\n        } else {\n            debug ? Write(\"<br><b>\" + action + \"</b><br> \") : null;\n        }\n\n        if (logExtKey) {\n            var log = {\n                action: action ? action : null,\n                log: response ? response : null\n            }\n\n            addLog(log, logExtKey);\n        }\n    }\n\n\n    /***********************************************\n     *\n     *   function addLog()\n     *   Pushes logging object to array to be written to a Data Extension\n     *   \n     *    @param obj {Object} logging object that matches the data extension\n     *    @param logExtKey {String} External Key to log records to\n     *    \n     ***********************************************/\n    fn.addLog = function(obj, logExtKey) {\n        var logDE = DataExtension.Init(logExtKey);\n        var logAction = logDE.Rows.Add(obj);\n    };\n\n\n    /***********************************************\n     * \n     * function getDataExtensionKey()\n     * Retieves the External Key for a SFMC Data Extension\n     * \n     * @param name {String} Name of the data extension\n     * @return {string} External Key of data extension\n     * \n     ***********************************************/\n    fn.getDataExtensionKey = function(name) {\n        var de = DataExtension.Retrieve({\n            Property: \"Name\",\n            SimpleOperator: \"equals\",\n            Value: name\n        });\n\n        var logKey = de[0].CustomerKey;\n\n        return logKey;\n    }\n\n\n    /***********************************************\n     * \n     * getFolderByName Function\n     * @name {string} - name of data extension to retrieve\n     * @contentType {string} - SFMC context: dataextension, ssjsactivity, asset,etc\n     * \n    ***********************************************/\n    fn.getFolderIDByName = function(config) {\n\n    if(!config.name) {\n        return 'folder name required'\n    }\n\n    if(!config.contentType) {\n        return 'contentType is required'\n    }\n\n\n    if(!config.parentFolderName){\n        var folderFilter = {\n            LeftOperand: {\n              Property: \"Name\",\n              SimpleOperator: \"equals\",\n              Value: config.name\n            },\n            LogicalOperator: \"AND\",\n            RightOperand: {\n              Property: \"ContentType\",\n              SimpleOperator: \"equals\",\n              Value: config.contentType\n            }\n          }\n    } else {\n        var folderFilter = {\n            LeftOperand: {\n              Property: \"Name\",\n              SimpleOperator: \"equals\",\n              Value: config.name\n            },\n            LogicalOperator: \"AND\",\n            RightOperand: {\n                LeftOperand: {\n                    Property: \"ParentFolder.Name\",\n                    SimpleOperator: \"equals\",\n                    Value: config.parentFolderName\n                  },\n                  LogicalOperator: \"AND\",\n                  RightOperand: {\n                    Property: \"ContentType\",\n                    SimpleOperator: \"equals\",\n                    Value: config.contentType\n                  }\n            }\n          }\n    }\n\n\n    var folderConfig = {\n      soapObjName: \"DataFolder\",\n      cols:[\"Name\", \"ID\", \"ParentFolder.ID\", \"ContentType\", \"ParentFolder.Name\",\"ObjectID\"],\n      filter: folderFilter\n    }\n\n    if(config.mid){\n        folderConfig.mid = config.mid\n    }\n\n    var res = wsRetrieve(folderConfig);\n    var folderID = res.Results[0].ID;\n    return folderID\n  }\n\n    \n    fn.queryStringToJSON = function(url) {\n        var query = url.split('?')[1] \n        var pairs = query.split('&');\n        \n        var result = {};\n        for(var q = 0; q < pairs.length; q++){\n            pair = pairs[q].split('=');\n            result[pair[0]] = decodeURIComponent(pair[1] || '');\n        }\n\n        return result;\n    }\n    \n    return fn\n}\n\n</script>"
+      },
+      {
+        "bldrId": "56571dac-0908-413a-998b-16efc536e462",
+        "name": "_ssjs_wsproxy",
+        "assetType": {
+          "id": 220,
+          "name": "codesnippetblock",
+          "displayName": "Code Snippet Block"
+        },
+        "category": {
+          "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes"
+        },
+        "content": "<script runat=\"server\">\nPlatform.Load(\"core\", \"1.1.1\");\n\n/******\n    ws.retrieve\n    var config = {\n        soapObjName: \"\", //required\n        cols: [], //required\n        mid: \"\", //optional\n        filter: {}, //optional\n        opts: {}, //optional\n        props: {} //optional\n    }\n\n    ws.create\n    var config = {\n        soapObjName: \"\", //required\n        payload: {}, //required\n        mid: \"\" //optional\n    }\n\n    ws.update\n    var config = {\n        soapObjName: \"\", //required\n        payload: {}, //required\n        options: {} //required\n    }\n\n    ws.perform\n    var config = {\n        soapObjName: \"\", //required\n        payload: {}, //required\n        options: {} //required\n    }\n ******/\nfunction wsproxy() {\n    var prox = new Script.Util.WSProxy();\n    var fn = {};\n\n    /*******************************\n     * @config {Object}\n     * @continueRequest {Boolean}\n     * @return {Array}\n     ******************************/\n    fn.retrieve = function(config, continueRequest) {\n\n        var reqID;\n        var moreData = true;\n        var continueRequest = continueRequest ? continueRequest : false;\n        var obj = config.soapObjName ? config.soapObjName : null;\n        var opts = config.opts ? config.opts : {};\n        var props = config.props ? config.props : {};\n        var filter = config.filter ? config.filter : {};\n        var cols = config.cols ? config.cols : null;\n        var mid = config.mid ? config.mid : null;\n        prox = mid ? util.proxyContext(prox, mid) : prox;\n\n        if (!config) { return 'configuration required'; }\n        if (!obj) { return 'SOAP object is required'; }\n\n        var resultsOut = [];\n\n        // my script to set the values for function\n        while (moreData) {\n            moreData = false;\n            if (reqID == null) {\n                if (filter) {\n                    var data = prox.retrieve(obj, cols, filter, opts, props);\n                } else {\n                    var data = prox.retrieve(obj, cols);\n                }\n            } else {\n                var data = prox.getNextBatch(obj, reqID);\n            }\n\n            if (data != null) {\n\n                if (continueRequest) {\n                    moreData = data.HasMoreRows;\n                    reqID = data.RequestID;\n                }\n\n                //my script to interact with results\n                if (data && data.Results) {\n                    for (var i = 0; i < data.Results.length; i++) {\n                        resultsOut.push(data.Results[i]);\n                    }\n                }\n            }\n        }\n\n\n        var res = {\n            results: resultsOut\n        }\n        return res\n    } // end retreive\n\n\n    /*******************************\n     * @config {Object}\n     * @return {Object}\n     ******************************/\n    fn.create = function(config) {\n        var obj = config.soapObjName ? config.soapObjName : null;\n        var payload = config.payload ? config.payload : null;\n        var mid = config.mid ? config.mid : null;\n        prox = mid ? util.proxyContext(prox, mid) : prox;\n\n        if (!config) { return 'configuration required'; }\n        if (!obj) { return 'configuration required'; }\n        if (!payload) { return 'payload is required'; }\n\n        var batch = util.isArray(payload);\n\n        if (batch) {\n            var res = prox.createBatch(obj, payload);\n        } else {\n            var res = prox.createItem(obj, payload);\n        }\n\n        return res;\n    } // end create\n\n    /*******************************\n     * @config {Object}\n     * @return {Object}\n     ******************************/\n    fn.update = function(config) {\n        var obj = config.soapObjName ? config.soapObjName : null;\n        var payload = config.payload ? config.payload : null;\n        var options = config.options ? config.options : null;\n        var mid = config.mid ? config.mid : null;\n        prox = mid ? util.proxyContext(prox, mid) : prox;\n\n        if (!config) { return 'configuration required'; }\n        if (!obj) { return 'SOAP object is required'; }\n        if (!payload) { return 'payload is required'; }\n\n        var batch = util.isArray(payload);\n\n        if (batch) {\n            var res = prox.updateBatch(obj, payload, options);\n        } else {\n            var res = prox.updateItem(obj, payload, options);\n        }\n\n        return res;\n    } // end update\n\n\n    /*******************************\n     * @config {Object}\n     * @return {Object}\n     ******************************/\n    fn.perform = function(config) {\n        var obj = config.soapObjName ? config.soapObjName : null;\n        var props = payload.props ? payload.props : {};\n        var action = payload.action ? payload.action : {};\n        var opts = payload.opts ? payload.opts : {};\n\n        var mid = config.mid ? config.mid : null;\n        prox = mid ? util.proxyContext(prox, mid) : prox;\n\n        if (!config) { return 'configuration required'; }\n        if (!obj) { return 'SOAP object is required'; }\n        if (!payload) { return 'payload is required'; }\n\n        var res = prox.performItem(obj, props, action, opts);\n        return res;\n    } // end perform\n\n    return fn\n}\n\n</script>\n"
+      },
+      {
+        "bldrId": "1b62ace9-32c5-46d8-bfd1-d2f06a9e4172",
+        "name": "api_config",
+        "assetType": {
+          "id": 220,
+          "name": "codesnippetblock",
+          "displayName": "Code Snippet Block"
+        },
+        "category": {
+          "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/config"
+        },
+        "content": "<script runat=\"server\">\nPlatform.Load(\"core\", \"1.1.1\");\n/***********************************************\n*   \n*   // To use these functions within your script use the\n*   // the following two lines to initialize the apiConfig settings\n*   // and set your accessToken variable.\n*   \n*   var apiConfig = getAPIConfig();\n*   var accessToken = auth(apiConfig, debug, runID); \n***********************************************/\n\n/***********************************************\n*\n*   function getAPIConfig()\n*   Sets all Credentials for RestAPI\n*\n***********************************************/\n\n  function getAPIConfig() {\n    return {\n      authBase:\"authentication_uri\",\n      restBase:\"rest_uri\",\n      contentType:\"application/json\",\n      grantType:\"client_credentials\",\n      mid: \"parentMID\",\n      clientID:\"client_id\",\n      clientSecret:\"client_secret\"\n    };\n  };\n\n</script>"
+      },
+      {
+        "bldrId": "a6c4d1e4-35d9-4f0c-b5ee-48eff0243e48",
+        "name": "ssjs_dataExtensions",
+        "assetType": {
+          "id": 220,
+          "name": "codesnippetblock",
+          "displayName": "Code Snippet Block"
+        },
+        "category": {
+          "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes"
+        },
+        "content": "<script runat=\"server\">\nPlatform.Load(\"core\", \"1.1.1\");\n\nfunction dataExtensions() {\n    var fn = {}\n    \n    fn.search = function(filter, mid){\n        var config = {\n            soapObjName: 'DataExtension',\n            cols: ['Name','CustomerKey'],\n            filter: filter\n        }\n\n        if(mid){\n            config.mid = mid;\n        }\n\n        var resp = ws.retrieve(config)\n        \n       return resp\n    }\n\n    return fn\n}\n</script>"
+      }
+    ]
+  }
+}
