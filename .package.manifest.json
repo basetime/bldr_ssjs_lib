@@ -1,5 +1,43 @@
 {
-  "packageName": "pkg_with_deps",
+  "packageName": "test",
+  "dataExtension": {
+    "folders": [
+      {
+        "folderPath": "Data Extensions/DeployTest"
+      }
+    ],
+    "assets": [
+      {
+        "name": "test",
+        "customerKey": "test",
+        "description": "",
+        "fields": [
+          {
+            "partnerKey": "",
+            "name": "test",
+            "defaultValue": "",
+            "maxLength": 50,
+            "isRequired": true,
+            "ordinal": 0,
+            "isPrimaryKey": false,
+            "fieldType": "Text"
+          }
+        ],
+        "category": {
+          "folderPath": "Data Extensions/DeployTest"
+        },
+        "isSendable": true,
+        "sendableDataExtensionField": {
+          "name": "test",
+          "fieldType": "Text"
+        },
+        "sendableSubscriberField": {
+          "name": "Subscriber Key"
+        },
+        "bldrId": "edc0579a-4786-4b30-9a62-f72b2e91cfbe"
+      }
+    ]
+  },
   "contentBuilder": {
     "folders": [
       {
@@ -20,7 +58,7 @@
         },
         "views": {
           "html": {
-            "content": "%%=[\r\nset @lookup = Lookup('116bf916-8e23-43af-a326-daa161b620f7', 'test', 'EmailName')\r\n\r\n]=%%\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n    <style type=\"text/css\">\r\n        div,\r\n        p,\r\n        a,\r\n        li,\r\n        td {\r\n            -webkit-text-size-adjust: none;\r\n        }\r\n        \r\n        body {\r\n            margin: 0;\r\n            padding: 0;\r\n        }\r\n        \r\n        td[class=\"headercell-phone\"] {\r\n            display: none;\r\n        }\r\n        \r\n        @media screen and (max-width: 480px) {\r\n            table[class=\"tmp--container\"] {\r\n                width: 360px !important;\r\n            }\r\n            table[class=\"tmp--container-padding\"] {\r\n                width: 360px !important;\r\n                padding: 20px !important;\r\n            }\r\n            table[class=\"tmp--container-padding-top\"] {\r\n                width: 360px !important;\r\n                padding: 20px 0 0 0 !important;\r\n            }\r\n            table[class=\"tmp--container-padding-bottom\"] {\r\n                width: 360px !important;\r\n                padding: 0 0 20px 0 !important;\r\n            }\r\n            table[class=\"hero\"] {\r\n                width: 100% !important;\r\n            }\r\n            table[class=\"tmp--full-width\"] {\r\n                width: 100% !important;\r\n                float: left !important;\r\n                padding: 0 !important;\r\n            }\r\n            td[class=\"tmp--full-width\"] {\r\n                width: 100% !important;\r\n                float: left !important;\r\n                padding: 0 !important;\r\n            }\r\n            td[class=\"tmp--full-width-padding-bottom\"] {\r\n                width: 100% !important;\r\n                float: left !important;\r\n                padding: 0 0 25px 0 !important;\r\n            }\r\n            td[class=\"tmp--full-width-center\"] {\r\n                width: 100% !important;\r\n                float: left !important;\r\n                padding: 10px 0 10px 0 !important;\r\n                text-align: center !important;\r\n            }\r\n            table[class=\"wrapper-padding\"] {\r\n                padding: 20px !important;\r\n            }\r\n            tr[class=\"wrapper-padding\"] {\r\n                padding: 20px !important;\r\n            }\r\n            td[class=\"wrapper-padding\"] {\r\n                padding: 20px !important;\r\n            }\r\n            td[class=\"col-padding-bottom\"] {\r\n                padding: 0 0 25px 0 !important;\r\n            }\r\n            img[class=\"photo\"] {\r\n                width: 100% !important;\r\n                height: auto !important;\r\n            }\r\n            td[class=\"row\"] {\r\n                width: 100% !important;\r\n            }\r\n            td[class=\"tmp--hide\"] {\r\n                display: none !important;\r\n            }\r\n        }\r\n    </style>\r\n</head>\r\n\r\n<!-- background color -->\r\n\r\n<body bgcolor=\"#ffffff\">\r\n\r\n    <!-- background color -->\r\n    <table bgcolor=\"#ffffff\" width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\r\n        <tr>\r\n            <td>\r\n                <!-- logo content area-->\r\n                <table style='background-color:#6c5e91;' class='tmp--container' width='600' align='center' border='0' cellspacing='0' cellpadding='0'>\r\n                    <tr>\r\n                        <td width='100%' style='padding:20px 25px 20px 25px;'>\r\n                            <center><img width='250' id='style-header-logo' src='https://s3-us-west-2.amazonaws.com/rd-industry-emails/healthcare-life-sciences/makana/branding-assets/email-templates/branding-MakanaHealth-logo-header-gray-2x.png'></center>\r\n                        </td>\r\n                    </tr>\r\n                </table>\r\n                <!-- end content area -->\r\n\r\n\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n                <!-- content area -->\r\n                <div data-type=\"slot\" data-key=\"cell2\"></div>\r\n                <!-- end content area -->\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n                <!-- content area -->\r\n                <div data-type=\"slot\" data-key=\"cell3\"></div>\r\n                <!-- end content area -->\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n                <!-- content area -->\r\n                <div data-type=\"slot\" data-key=\"cell4\"></div>\r\n                <!-- end content area -->\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n                <!-- content area -->\r\n                <div data-type=\"slot\" data-key=\"cell5\"></div>\r\n                <!-- end content area -->\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n                <!-- content area -->\r\n                <div data-type=\"slot\" data-key=\"cell6\"></div>\r\n                <!-- end content area -->\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n                <!-- content area -->\r\n                <div data-type=\"slot\" data-key=\"cell7\"></div>\r\n                <!-- end content area -->\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n\r\n\r\n                <!-- footer content area -->\r\n                <table style='background-color:#6c5e91;' class='tmp--container' width='600' align='center' border='0' cellspacing='0' cellpadding='0'>\r\n                    <tr>\r\n                        <td class='tmp--full-width-center' width='100%' align='center' style='padding:25px 20px 0 20px;'><img width='50' id='style-footer-logo' src='https://s3-us-west-2.amazonaws.com/rd-industry-emails/healthcare-life-sciences/makana/branding-assets/email-templates/branding-MakanaHealth-logo-footer-gray-2x.png'></td>\r\n                    </tr>\r\n                    <tr>\r\n                      <td>\r\n                        %%=ContentBlockByName(\"d2dec553-34cf-4e87-b3ea-5c89e84b900e\")=%%\r\n                      </td>\r\n                    </tr>\r\n                </table>\r\n                %%=ContentBlockById('18f1516e-0883-4399-8bdb-a7a483b4b67e')=%%\r\n                \r\n                <table style='background-color:#6c5e91;' class='tmp--container' width='600' align='center' border='0' cellspacing='0' cellpadding='0'>\r\n                    <tr>\r\n                        <td style='color:#ffffff;font-family:Gotham, Arial, sans-serif;font-size:11px;font-style:normal;font-weight:normal;padding:20px 20px 10px 20px;' class='tmp--full-width-center' width='100%' align='center' width='432'><a href=\"%%view_email_url%%\" alias=\"Web Version\" target=\"_blank\" style=\"color:#ffffff;text-decoration:none;\">View as a Webpage</a>\r\n                          \r\n                        </td>\r\n                    </tr>\r\n                    <tr>\r\n                        <td style='color:#ffffff;font-family:Gotham, Arial, sans-serif;font-size:11px;font-style:normal;font-weight:normal;padding:10px 20px 20px 20px;' class='tmp--full-width-center' width='100%' align='center' width='432'>%%Member_Busname%%\r\n                            <br />%%Member_Addr%% %%Member_City%%, %%Member_State%%, %%Member_PostalCode%%, %%Member_Country%%.\r\n                            <br />\r\n                        </td>\r\n                    </tr>\r\n                    <tr>\r\n                        <td style=\"font-family:Gotham, Helvetica, Arial, sans-serif; text-align:center; color:#ffffff; font-size:11px; font-weight:bold; line-height:14px; padding:0 25px 15px 25px;\">\r\n                            <img width=\"30\" src=\"https://s3-us-west-2.amazonaws.com/rd-industry-emails/healthcare-life-sciences/makana/branding-assets/email-templates/branding-MakanaHealth-social-icon-website-white.png\" style=\"padding:0px 5px;\" />\r\n                            <img width=\"30\" src=\"https://s3-us-west-2.amazonaws.com/rd-industry-emails/healthcare-life-sciences/makana/branding-assets/email-templates/branding-MakanaHealth-social-icon-facebook-white.png\" style=\"padding:0px 5px;\" />\r\n                            <img width=\"30\" src=\"https://s3-us-west-2.amazonaws.com/rd-industry-emails/healthcare-life-sciences/makana/branding-assets/email-templates/branding-MakanaHealth-social-icon-twitter-white.png\" style=\"padding:0px 5px;\" />\r\n                            <img width=\"30\" src=\"https://s3-us-west-2.amazonaws.com/rd-industry-emails/healthcare-life-sciences/makana/branding-assets/email-templates/branding-MakanaHealth-social-icon-instagram-white.png\" style=\"padding:0px 5px;\" />\r\n                        </td>\r\n                    </tr>\r\n                </table>\r\n                <table style='background-color:#6c5e91;' class='tmp--container' width='600' border='0' align='center' cellpadding='0' cellspacing='0'>\r\n                    <tr>\r\n                        <td style=\"font-family:Gotham, Helvetica, Arial, sans-serif;text-align:center;color:#ffffff;font-size:11px;font-style:normal;font-weight:normal;line-height:14px;padding:0 25px 35px 25px;\">\r\n                            <a href=\"%%profile_center_url%%\" alias=\"Profile Center\" target=\"_blank\" style=\"color:#ffffff;text-decoration:none;\">Profile Center</a> <span style=\"color:#aa95d1; padding:0 5px;\">|</span>\r\n                            <a href=\"%%subscription_center_url%%\" alias=\"Manage Subscriptions\" target=\"_blank\" style=\"color:#ffffff;text-decoration:none;\">Manage Subscriptions\r\n                  </a> <span style=\"color:#aa95d1; padding:0 5px;\">|</span>\r\n                            <a target=\"_blank\" href=\"%%unsub_center_url%%\" alias=\"Unsubscribe\" title=\"Unsubscribe\" style=\"color:#ffffff;text-decoration:none;\">Unsubscribe\r\n                  </a>\r\n                        </td>\r\n                    </tr>\r\n                </table>\r\n                <!-- end content area -->\r\n\r\n\r\n            </td>\r\n        </tr>\r\n    </table>\r\n\r\n    <div id=\"tracking_pixel\">\r\n        <custom name=\"opencounter\" type=\"tracking\">\r\n    </div>\r\n    <div id=\"campaign_pixel\">\r\n    </div>\r\n</body>\r\n\r\n</html>",
+            "content": "%%=[\r\nset @lookup = Lookup('edc0579a-4786-4b30-9a62-f72b2e91cfbe', 'test', 'EmailName')\r\n\r\n]=%%\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n    <style type=\"text/css\">\r\n        div,\r\n        p,\r\n        a,\r\n        li,\r\n        td {\r\n            -webkit-text-size-adjust: none;\r\n        }\r\n        \r\n        body {\r\n            margin: 0;\r\n            padding: 0;\r\n        }\r\n        \r\n        td[class=\"headercell-phone\"] {\r\n            display: none;\r\n        }\r\n        \r\n        @media screen and (max-width: 480px) {\r\n            table[class=\"tmp--container\"] {\r\n                width: 360px !important;\r\n            }\r\n            table[class=\"tmp--container-padding\"] {\r\n                width: 360px !important;\r\n                padding: 20px !important;\r\n            }\r\n            table[class=\"tmp--container-padding-top\"] {\r\n                width: 360px !important;\r\n                padding: 20px 0 0 0 !important;\r\n            }\r\n            table[class=\"tmp--container-padding-bottom\"] {\r\n                width: 360px !important;\r\n                padding: 0 0 20px 0 !important;\r\n            }\r\n            table[class=\"hero\"] {\r\n                width: 100% !important;\r\n            }\r\n            table[class=\"tmp--full-width\"] {\r\n                width: 100% !important;\r\n                float: left !important;\r\n                padding: 0 !important;\r\n            }\r\n            td[class=\"tmp--full-width\"] {\r\n                width: 100% !important;\r\n                float: left !important;\r\n                padding: 0 !important;\r\n            }\r\n            td[class=\"tmp--full-width-padding-bottom\"] {\r\n                width: 100% !important;\r\n                float: left !important;\r\n                padding: 0 0 25px 0 !important;\r\n            }\r\n            td[class=\"tmp--full-width-center\"] {\r\n                width: 100% !important;\r\n                float: left !important;\r\n                padding: 10px 0 10px 0 !important;\r\n                text-align: center !important;\r\n            }\r\n            table[class=\"wrapper-padding\"] {\r\n                padding: 20px !important;\r\n            }\r\n            tr[class=\"wrapper-padding\"] {\r\n                padding: 20px !important;\r\n            }\r\n            td[class=\"wrapper-padding\"] {\r\n                padding: 20px !important;\r\n            }\r\n            td[class=\"col-padding-bottom\"] {\r\n                padding: 0 0 25px 0 !important;\r\n            }\r\n            img[class=\"photo\"] {\r\n                width: 100% !important;\r\n                height: auto !important;\r\n            }\r\n            td[class=\"row\"] {\r\n                width: 100% !important;\r\n            }\r\n            td[class=\"tmp--hide\"] {\r\n                display: none !important;\r\n            }\r\n        }\r\n    </style>\r\n</head>\r\n\r\n<!-- background color -->\r\n\r\n<body bgcolor=\"#ffffff\">\r\n\r\n    <!-- background color -->\r\n    <table bgcolor=\"#ffffff\" width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\r\n        <tr>\r\n            <td>\r\n                <!-- logo content area-->\r\n                <table style='background-color:#6c5e91;' class='tmp--container' width='600' align='center' border='0' cellspacing='0' cellpadding='0'>\r\n                    <tr>\r\n                        <td width='100%' style='padding:20px 25px 20px 25px;'>\r\n                            <center><img width='250' id='style-header-logo' src='https://s3-us-west-2.amazonaws.com/rd-industry-emails/healthcare-life-sciences/makana/branding-assets/email-templates/branding-MakanaHealth-logo-header-gray-2x.png'></center>\r\n                        </td>\r\n                    </tr>\r\n                </table>\r\n                <!-- end content area -->\r\n\r\n\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n                <!-- content area -->\r\n                <div data-type=\"slot\" data-key=\"cell2\"></div>\r\n                <!-- end content area -->\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n                <!-- content area -->\r\n                <div data-type=\"slot\" data-key=\"cell3\"></div>\r\n                <!-- end content area -->\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n                <!-- content area -->\r\n                <div data-type=\"slot\" data-key=\"cell4\"></div>\r\n                <!-- end content area -->\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n                <!-- content area -->\r\n                <div data-type=\"slot\" data-key=\"cell5\"></div>\r\n                <!-- end content area -->\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n                <!-- content area -->\r\n                <div data-type=\"slot\" data-key=\"cell6\"></div>\r\n                <!-- end content area -->\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n                <!-- content area -->\r\n                <div data-type=\"slot\" data-key=\"cell7\"></div>\r\n                <!-- end content area -->\r\n            </td>\r\n        </tr>\r\n\r\n        <tr>\r\n            <td>\r\n\r\n\r\n                <!-- footer content area -->\r\n                <table style='background-color:#6c5e91;' class='tmp--container' width='600' align='center' border='0' cellspacing='0' cellpadding='0'>\r\n                    <tr>\r\n                        <td class='tmp--full-width-center' width='100%' align='center' style='padding:25px 20px 0 20px;'><img width='50' id='style-footer-logo' src='https://s3-us-west-2.amazonaws.com/rd-industry-emails/healthcare-life-sciences/makana/branding-assets/email-templates/branding-MakanaHealth-logo-footer-gray-2x.png'></td>\r\n                    </tr>\r\n                    <tr>\r\n                      <td>\r\n                        %%=ContentBlockByName(\"d2dec553-34cf-4e87-b3ea-5c89e84b900e\")=%%\r\n                      </td>\r\n                    </tr>\r\n                </table>\r\n                %%=ContentBlockById('18f1516e-0883-4399-8bdb-a7a483b4b67e')=%%\r\n                \r\n                <table style='background-color:#6c5e91;' class='tmp--container' width='600' align='center' border='0' cellspacing='0' cellpadding='0'>\r\n                    <tr>\r\n                        <td style='color:#ffffff;font-family:Gotham, Arial, sans-serif;font-size:11px;font-style:normal;font-weight:normal;padding:20px 20px 10px 20px;' class='tmp--full-width-center' width='100%' align='center' width='432'><a href=\"%%view_email_url%%\" alias=\"Web Version\" target=\"_blank\" style=\"color:#ffffff;text-decoration:none;\">View as a Webpage</a>\r\n                          \r\n                        </td>\r\n                    </tr>\r\n                    <tr>\r\n                        <td style='color:#ffffff;font-family:Gotham, Arial, sans-serif;font-size:11px;font-style:normal;font-weight:normal;padding:10px 20px 20px 20px;' class='tmp--full-width-center' width='100%' align='center' width='432'>%%Member_Busname%%\r\n                            <br />%%Member_Addr%% %%Member_City%%, %%Member_State%%, %%Member_PostalCode%%, %%Member_Country%%.\r\n                            <br />\r\n                        </td>\r\n                    </tr>\r\n                    <tr>\r\n                        <td style=\"font-family:Gotham, Helvetica, Arial, sans-serif; text-align:center; color:#ffffff; font-size:11px; font-weight:bold; line-height:14px; padding:0 25px 15px 25px;\">\r\n                            <img width=\"30\" src=\"https://s3-us-west-2.amazonaws.com/rd-industry-emails/healthcare-life-sciences/makana/branding-assets/email-templates/branding-MakanaHealth-social-icon-website-white.png\" style=\"padding:0px 5px;\" />\r\n                            <img width=\"30\" src=\"https://s3-us-west-2.amazonaws.com/rd-industry-emails/healthcare-life-sciences/makana/branding-assets/email-templates/branding-MakanaHealth-social-icon-facebook-white.png\" style=\"padding:0px 5px;\" />\r\n                            <img width=\"30\" src=\"https://s3-us-west-2.amazonaws.com/rd-industry-emails/healthcare-life-sciences/makana/branding-assets/email-templates/branding-MakanaHealth-social-icon-twitter-white.png\" style=\"padding:0px 5px;\" />\r\n                            <img width=\"30\" src=\"https://s3-us-west-2.amazonaws.com/rd-industry-emails/healthcare-life-sciences/makana/branding-assets/email-templates/branding-MakanaHealth-social-icon-instagram-white.png\" style=\"padding:0px 5px;\" />\r\n                        </td>\r\n                    </tr>\r\n                </table>\r\n                <table style='background-color:#6c5e91;' class='tmp--container' width='600' border='0' align='center' cellpadding='0' cellspacing='0'>\r\n                    <tr>\r\n                        <td style=\"font-family:Gotham, Helvetica, Arial, sans-serif;text-align:center;color:#ffffff;font-size:11px;font-style:normal;font-weight:normal;line-height:14px;padding:0 25px 35px 25px;\">\r\n                            <a href=\"%%profile_center_url%%\" alias=\"Profile Center\" target=\"_blank\" style=\"color:#ffffff;text-decoration:none;\">Profile Center</a> <span style=\"color:#aa95d1; padding:0 5px;\">|</span>\r\n                            <a href=\"%%subscription_center_url%%\" alias=\"Manage Subscriptions\" target=\"_blank\" style=\"color:#ffffff;text-decoration:none;\">Manage Subscriptions\r\n                  </a> <span style=\"color:#aa95d1; padding:0 5px;\">|</span>\r\n                            <a target=\"_blank\" href=\"%%unsub_center_url%%\" alias=\"Unsubscribe\" title=\"Unsubscribe\" style=\"color:#ffffff;text-decoration:none;\">Unsubscribe\r\n                  </a>\r\n                        </td>\r\n                    </tr>\r\n                </table>\r\n                <!-- end content area -->\r\n\r\n\r\n            </td>\r\n        </tr>\r\n    </table>\r\n\r\n    <div id=\"tracking_pixel\">\r\n        <custom name=\"opencounter\" type=\"tracking\">\r\n    </div>\r\n    <div id=\"campaign_pixel\">\r\n    </div>\r\n</body>\r\n\r\n</html>",
             "availableViews": [],
             "data": {
               "email": {
@@ -33,9 +71,18 @@
           }
         },
         "dependencies": [
-          "18f1516e-0883-4399-8bdb-a7a483b4b67e",
-          "d2dec553-34cf-4e87-b3ea-5c89e84b900e",
-          "116bf916-8e23-43af-a326-daa161b620f7"
+          {
+            "ref": "ContentBlockById",
+            "bldrId": "18f1516e-0883-4399-8bdb-a7a483b4b67e"
+          },
+          {
+            "ref": "ContentBlockByName",
+            "bldrId": "d2dec553-34cf-4e87-b3ea-5c89e84b900e"
+          },
+          {
+            "ref": "Lookup",
+            "bldrId": "edc0579a-4786-4b30-9a62-f72b2e91cfbe"
+          }
         ]
       },
       {
@@ -113,44 +160,6 @@
             "styling": {}
           }
         }
-      }
-    ]
-  },
-  "dataExtension": {
-    "folders": [
-      {
-        "folderPath": "Data Extensions/DeployTest"
-      }
-    ],
-    "assets": [
-      {
-        "name": "test",
-        "customerKey": "test",
-        "description": "",
-        "fields": [
-          {
-            "partnerKey": "",
-            "name": "test",
-            "defaultValue": "",
-            "maxLength": 50,
-            "isRequired": true,
-            "ordinal": 0,
-            "isPrimaryKey": false,
-            "fieldType": "Text"
-          }
-        ],
-        "category": {
-          "folderPath": "Data Extensions/DeployTest"
-        },
-        "isSendable": true,
-        "sendableDataExtensionField": {
-          "name": "test",
-          "fieldType": "Text"
-        },
-        "sendableSubscriberField": {
-          "name": "Subscriber Key"
-        },
-        "bldrId": "116bf916-8e23-43af-a326-daa161b620f7"
       }
     ]
   }

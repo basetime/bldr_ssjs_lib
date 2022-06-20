@@ -149,6 +149,15 @@
     "folders": [
       {
         "folderPath": "Data Extensions/DeployTest"
+      },
+      {
+        "folderPath": "Data Extensions/DeployTest"
+      },
+      {
+        "folderPath": "Data Extensions/DeployTest"
+      },
+      {
+        "folderPath": "Data Extensions/DeployTest"
       }
     ],
     "assets": [
@@ -179,7 +188,94 @@
         "sendableSubscriberField": {
           "name": "Subscriber Key"
         },
-        "bldrId": "116bf916-8e23-43af-a326-daa161b620f7"
+        "bldrId": "bd88ec32-9b2d-4f5a-9aed-5754dbf1182b"
+      },
+      {
+        "name": "test",
+        "customerKey": "test",
+        "description": "",
+        "fields": [
+          {
+            "partnerKey": "",
+            "name": "test",
+            "defaultValue": "",
+            "maxLength": 50,
+            "isRequired": true,
+            "ordinal": 0,
+            "isPrimaryKey": false,
+            "fieldType": "Text"
+          }
+        ],
+        "category": {
+          "folderPath": "Data Extensions/DeployTest"
+        },
+        "isSendable": true,
+        "sendableDataExtensionField": {
+          "name": "test",
+          "fieldType": "Text"
+        },
+        "sendableSubscriberField": {
+          "name": "Subscriber Key"
+        },
+        "bldrId": "160e2848-d1e8-4ac6-9722-11ec139165f3"
+      },
+      {
+        "name": "test",
+        "customerKey": "test",
+        "description": "",
+        "fields": [
+          {
+            "partnerKey": "",
+            "name": "test",
+            "defaultValue": "",
+            "maxLength": 50,
+            "isRequired": true,
+            "ordinal": 0,
+            "isPrimaryKey": false,
+            "fieldType": "Text"
+          }
+        ],
+        "category": {
+          "folderPath": "Data Extensions/DeployTest"
+        },
+        "isSendable": true,
+        "sendableDataExtensionField": {
+          "name": "test",
+          "fieldType": "Text"
+        },
+        "sendableSubscriberField": {
+          "name": "Subscriber Key"
+        },
+        "bldrId": "067a0c97-118c-42f2-bc0d-0688a9041252"
+      },
+      {
+        "name": "test",
+        "customerKey": "test",
+        "description": "",
+        "fields": [
+          {
+            "partnerKey": "",
+            "name": "test",
+            "defaultValue": "",
+            "maxLength": 50,
+            "isRequired": true,
+            "ordinal": 0,
+            "isPrimaryKey": false,
+            "fieldType": "Text"
+          }
+        ],
+        "category": {
+          "folderPath": "Data Extensions/DeployTest"
+        },
+        "isSendable": true,
+        "sendableDataExtensionField": {
+          "name": "test",
+          "fieldType": "Text"
+        },
+        "sendableSubscriberField": {
+          "name": "Subscriber Key"
+        },
+        "bldrId": "edc0579a-4786-4b30-9a62-f72b2e91cfbe"
       }
     ]
   }
