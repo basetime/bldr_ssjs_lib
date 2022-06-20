@@ -1,38 +1,38 @@
 [
   {
-    "id": 104740,
+    "id": 104409,
     "context": "contentBuilder",
-    "bldrId": "90e2b771-06da-4caa-b046-e882d655f438",
-    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/_ssjs_api.html"
+    "bldrId": "4b8a7377-0459-41d1-aa34-52f7022fcabe",
+    "folderPath": "Content Builder/ssjs_lib_for_pkg/ssjs_classes/_ssjs_api.html"
   },
   {
-    "id": 104741,
+    "id": 104410,
     "context": "contentBuilder",
-    "bldrId": "c4df77da-fff0-472f-bb3c-f79cfa18a4ad",
-    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/_ssjs_oauth.html"
+    "bldrId": "4cc0507d-4751-4c23-ae25-03cb63e4cbea",
+    "folderPath": "Content Builder/ssjs_lib_for_pkg/ssjs_classes/_ssjs_oauth.html"
   },
   {
-    "id": 104742,
+    "id": 104411,
     "context": "contentBuilder",
-    "bldrId": "02816c62-f138-4f9d-9fe2-6537b07f81b3",
-    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/_ssjs_util.html"
+    "bldrId": "8850bf98-6c3e-4e81-bb39-90d3025f6b4d",
+    "folderPath": "Content Builder/ssjs_lib_for_pkg/ssjs_classes/_ssjs_util.html"
   },
   {
-    "id": 104743,
+    "id": 104412,
     "context": "contentBuilder",
-    "bldrId": "56571dac-0908-413a-998b-16efc536e462",
-    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/_ssjs_wsproxy.html"
+    "bldrId": "5cb6b608-dcbe-450a-a55b-103c75cbb6b7",
+    "folderPath": "Content Builder/ssjs_lib_for_pkg/ssjs_classes/_ssjs_wsproxy.html"
   },
   {
-    "id": 104744,
+    "id": 104413,
     "context": "contentBuilder",
-    "bldrId": "1b62ace9-32c5-46d8-bfd1-d2f06a9e4172",
-    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/config/api_config.html"
+    "bldrId": "e41e4d35-4a11-4275-a857-58b0767ed02e",
+    "folderPath": "Content Builder/ssjs_lib_for_pkg/ssjs_classes/config/_api_config.html"
   },
   {
-    "id": 104745,
+    "id": 104414,
     "context": "contentBuilder",
-    "bldrId": "a6c4d1e4-35d9-4f0c-b5ee-48eff0243e48",
-    "folderPath": "Content Builder/stream_demo_ssjs/ssjs_classes/ssjs_dataExtensions.html"
+    "bldrId": "635c7729-f461-4f59-8cbf-8e5d790922b2",
+    "folderPath": "Content Builder/ssjs_lib_for_pkg/ssjs_classes/ssjs_dataExtensions.html"
   }
 ]
