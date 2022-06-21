@@ -1,38 +1,38 @@
 [
   {
-    "id": 104066,
+    "id": 66589,
     "context": "contentBuilder",
-    "bldrId": "38a5e30a-58bc-4d01-868f-1b1aa77baa53",
-    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_api.html"
+    "bldrId": "48a6fd75-c1f2-4604-a8ee-1b5429be52ec",
+    "folderPath": "Content Builder/bldr_package_assets/Postman Demo - HTML Email 5.html"
   },
   {
-    "id": 104067,
+    "id": 69326,
     "context": "contentBuilder",
-    "bldrId": "1e063630-673d-4982-b1da-39dd0e88797c",
-    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_oauth.html"
+    "bldrId": "15d0648d-1790-44f3-bdcc-cf73b71a22fd",
+    "folderPath": "Content Builder/bldr_package_assets/htmlblock.html"
   },
   {
-    "id": 104068,
+    "id": 90460,
     "context": "contentBuilder",
-    "bldrId": "1bffea6e-56d8-4ded-b451-d749ed929222",
-    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_util.html"
+    "bldrId": "81d05624-3bbf-4fc0-8c53-868709e304f8",
+    "folderPath": "Content Builder/bldr_package_assets/bldr-test.html"
   },
   {
-    "id": 104069,
+    "id": 99049,
     "context": "contentBuilder",
-    "bldrId": "d1c12015-2c36-4a61-8549-4702eb07d964",
-    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_wsproxy.html"
+    "bldrId": "63543b12-d01b-4b7f-a4c4-5955c1755728",
+    "folderPath": "Content Builder/bldr_package_assets/htmlblock 2.html"
   },
   {
-    "id": 104070,
+    "id": 99050,
     "context": "contentBuilder",
-    "bldrId": "b9f7dffc-fae2-4079-b8c6-b03f9ccc35a2",
-    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/config/_api_config.html"
+    "bldrId": "d8176f59-7b19-40a7-aa0a-9489981e1dc8",
+    "folderPath": "Content Builder/bldr_package_assets/htmlblock 3.html"
   },
   {
-    "id": 104071,
-    "context": "contentBuilder",
-    "bldrId": "cc477adf-1f3f-4a1c-a656-5f711406496f",
-    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/ssjs_dataExtensions.html"
+    "id": "test",
+    "context": "dataExtension",
+    "bldrId": "8cc6c07a-0363-4d5d-bc3f-8a7b1ea18a0d",
+    "folderPath": "Data Extensions/DeployTest/test.json"
   }
 ]
