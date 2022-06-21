@@ -1,38 +1,38 @@
 [
   {
-    "id": 66589,
+    "id": 104066,
     "context": "contentBuilder",
-    "bldrId": "1c4ad497-ed23-410f-8598-09fd8fb34f5b",
-    "folderPath": "Content Builder/bldr_package_assets/Postman Demo - HTML Email 5.html"
+    "bldrId": "38a5e30a-58bc-4d01-868f-1b1aa77baa53",
+    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_api.html"
   },
   {
-    "id": 69326,
+    "id": 104067,
     "context": "contentBuilder",
-    "bldrId": "18f1516e-0883-4399-8bdb-a7a483b4b67e",
-    "folderPath": "Content Builder/bldr_package_assets/htmlblock.html"
+    "bldrId": "1e063630-673d-4982-b1da-39dd0e88797c",
+    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_oauth.html"
   },
   {
-    "id": 90460,
+    "id": 104068,
     "context": "contentBuilder",
-    "bldrId": "d2dec553-34cf-4e87-b3ea-5c89e84b900e",
-    "folderPath": "Content Builder/bldr_package_assets/bldr-test.html"
+    "bldrId": "1bffea6e-56d8-4ded-b451-d749ed929222",
+    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_util.html"
   },
   {
-    "id": 99049,
+    "id": 104069,
     "context": "contentBuilder",
-    "bldrId": "f0a064c2-d9e0-4532-bf17-292c941acc7d",
-    "folderPath": "Content Builder/bldr_package_assets/htmlblock 2.html"
+    "bldrId": "d1c12015-2c36-4a61-8549-4702eb07d964",
+    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_wsproxy.html"
   },
   {
-    "id": 99050,
+    "id": 104070,
     "context": "contentBuilder",
-    "bldrId": "3f56cc06-b3a0-4ae1-8494-5854bc05bcc3",
-    "folderPath": "Content Builder/bldr_package_assets/htmlblock 3.html"
+    "bldrId": "b9f7dffc-fae2-4079-b8c6-b03f9ccc35a2",
+    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/config/_api_config.html"
   },
   {
-    "id": "test",
-    "context": "dataExtension",
-    "bldrId": "116bf916-8e23-43af-a326-daa161b620f7",
-    "folderPath": "Data Extensions/DeployTest/test.json"
+    "id": 104071,
+    "context": "contentBuilder",
+    "bldrId": "cc477adf-1f3f-4a1c-a656-5f711406496f",
+    "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/ssjs_dataExtensions.html"
   }
 ]
