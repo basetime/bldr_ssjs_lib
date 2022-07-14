@@ -4,7 +4,6 @@
   function api() {
 
     var fn = {}
-
     fn.auth = function (config) {
       if (!config) { return 'configuration required'; }
       if (!config.clientID) { return 'clientID required'; }
@@ -20,6 +19,7 @@
         account_id: config.mid
       }
 
+      Write(Stringify(authPayload))
       try {
         var req = new Script.Util.HttpRequest(config.authBase + "v2/token");
         req.emptyContentHandling = 0;
@@ -33,6 +33,7 @@
         var resultStr = String(resp.content);
         var resultJSON = Platform.Function.ParseJSON(resultStr);
 
+        Write(Stringify(resultJSON))
         var response = resultJSON["Response"][0];
         var accessToken = resultJSON.access_token;
 
@@ -67,6 +68,8 @@
         return err
       };
     }
+
+    return fn
   }
 
 </script>

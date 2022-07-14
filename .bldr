@@ -1,32 +1,56 @@
 [
   {
-    "id": 104066,
+    "id": 116488,
     "context": "contentBuilder",
-    "bldrId": "c593dd44-4169-4398-a945-78531c874db8",
+    "bldrId": "ec6c2cd6-ba20-4fc2-b990-ab635e16dfdb",
     "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_api.html"
   },
   {
-    "id": 104068,
+    "id": 116489,
     "context": "contentBuilder",
-    "bldrId": "0337e81d-f96b-4e21-8258-cdaa22071fca",
+    "bldrId": "e85a3a39-2421-4b8a-97d0-750cdbcca0c1",
     "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_util.html"
   },
   {
-    "id": 104069,
+    "id": 116490,
     "context": "contentBuilder",
-    "bldrId": "7e39a452-e2d1-4ba9-b4fb-21de8764f063",
+    "bldrId": "0265629f-054f-4a82-b34b-369c552c22ed",
     "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/_ssjs_wsproxy.html"
   },
   {
-    "id": 104070,
+    "id": 116491,
     "context": "contentBuilder",
-    "bldrId": "8281c033-0a3a-4487-b016-02119e706748",
+    "bldrId": "1c484a84-ae90-4e41-ad26-a29805fa463b",
     "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/config/_api_config.html"
   },
   {
-    "id": 104071,
+    "id": 116492,
     "context": "contentBuilder",
-    "bldrId": "6f44216a-e519-471a-9bae-c1e997839094",
+    "bldrId": "f6c347d0-0f9b-4d28-81c7-9665db8ef7df",
     "folderPath": "Content Builder/bldr_ssjs_lib/ssjs_classes/ssjs_dataExtensions.html"
+  },
+  {
+    "id": 116497,
+    "context": "contentBuilder",
+    "bldrId": "783b2494-9a9f-4672-87af-0c5277ffd0e0",
+    "folderPath": "Content Builder/bldr_ssjs_lib/usage_samples/lookupDataExtensions.html"
+  },
+  {
+    "id": 116655,
+    "context": "contentBuilder",
+    "bldrId": "6c978534-abd2-4a3a-aa61-ccdc1c54c8fa",
+    "folderPath": "Content Builder/bldr_ssjs_lib/usage_samples/createDataExtension.html"
+  },
+  {
+    "id": 116656,
+    "context": "contentBuilder",
+    "bldrId": "6a218479-6372-480b-905f-40eace47534d",
+    "folderPath": "Content Builder/bldr_ssjs_lib/usage_samples/performQueryDefinition.html"
+  },
+  {
+    "id": 116657,
+    "context": "contentBuilder",
+    "bldrId": "65e2d091-fb47-4c0f-90da-a58d96f2af75",
+    "folderPath": "Content Builder/bldr_ssjs_lib/usage_samples/upsertToDataExtension.html"
   }
 ]

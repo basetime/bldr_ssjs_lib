@@ -19,13 +19,13 @@ Platform.Load("core", "1.1.1");
 
   function getAPIConfig() {
     return {
-      authBase:"{{authentication_uri}}",
-      restBase:"{{rest_uri}}",
-      contentType:"{{application}}/json",
-      grantType:"{{client_credentials}}",
-      mid: "{{parentMID}}",
-      clientID:"{{client_id}}",
-      clientSecret:"{{client_secret}}"
+      authBase:"{{authBase}}",
+      restBase:"{{restBase}}",
+      contentType:"application/json",
+      grantType:"client_credentials",
+      mid: "{{mid}}",
+      clientID:"{{clientID}}",
+      clientSecret:"{{clientSecret}}"
     };
   };
 

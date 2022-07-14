@@ -1,0 +1,61 @@
+deExplorer_564910812c-147c
+
+
+<script runat="server">
+  Platform.Load("core", "1.1")
+
+  var libPath = "Content Builder\\bldr_ssjs_lib\\ssjs_classes"
+  Platform.Function.ContentBlockByName(libPath + "\\config\\_api_config")
+  Platform.Function.ContentBlockByName(libPath + "\\_ssjs_api")
+  Platform.Function.ContentBlockByName(libPath + "\\_ssjs_util")
+  Platform.Function.ContentBlockByName(libPath + "\\_ssjs_wsproxy")
+
+  var apiConfig = getAPIConfig();
+  var api = api();
+  var ws = wsproxy();
+  var util = util();
+
+  var debug = 1;
+  var logExtKey = null;
+
+  try {
+
+    // Get Query Definition ObjectID
+    var getQueryInformationConfig = {
+      soapObjName: 'QueryDefinition',
+      cols: [],
+      filter: {
+        Property: 'Name',
+        SimpleOperator: 'equals',
+        Value: '{{Query Definition Name}}'
+      }
+    }
+
+    var getQueryInformationResp = ws.retrieve(getQueryInformationConfig, false)
+    util.deBug('Query Definition Response', getQueryInformationResp, logExtKey, debug)
+
+
+    var queryObjectId = getQueryInformationResp.results[0].ObjectID;
+    util.deBug('Query Object ID', queryObjectId, logExtKey, debug)
+   
+
+    // Start Query Definition
+    var startQueryInformationConfig = {
+      soapObjName: "QueryDefinition",
+      payload: {
+        props: {
+          ObjectID: queryObjectId
+        },
+        action: "start",
+        opts: {}
+      }
+    }
+
+    var startQueryInformationResp = ws.perform(startQueryInformationConfig)
+    util.deBug('Start Query Response', startQueryInformationResp, logExtKey, debug)
+
+
+  } catch (err) {
+    util.deBug('Error', err, logExtKey, debug)
+  }
+</script>

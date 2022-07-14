@@ -1,0 +1,32 @@
+<script runat="server">
+  Platform.Load("core", "1.1")
+
+  var libPath = "Content Builder\\bldr_ssjs_lib\\ssjs_classes"
+  Platform.Function.ContentBlockByName(libPath + "\\config\\_api_config")
+  Platform.Function.ContentBlockByName(libPath + "\\_ssjs_api")
+  Platform.Function.ContentBlockByName(libPath + "\\_ssjs_util")
+  Platform.Function.ContentBlockByName(libPath + "\\_ssjs_wsproxy")
+
+  var apiConfig = getAPIConfig();
+  var api = api();
+  var ws = wsproxy();
+  var util = util();
+
+  var debug = 1;
+  var logExtKey = null;
+
+  try {
+    
+    // Get all Data Extensions
+    var dataExtensionConfig = {
+      soapObjName: 'DataExtension',
+      cols: []
+    }
+
+    var dataExtensionResp = ws.retrieve(dataExtensionConfig, true)
+    util.deBug('Data Extension Lookup', dataExtensionResp, logExtKey, debug)
+
+  } catch (err) {
+    Write(Stringify(err))
+  }
+</script>

@@ -1,6 +1,7 @@
 {
-  "client_id": "",
-  "client_secret": "",
-  "authentication_uri": "",
-  "parentMID": ""
+  "authBase":"",
+  "restBase":"",
+  "mid": "",
+  "clientID":"",
+  "clientSecret":""
 }

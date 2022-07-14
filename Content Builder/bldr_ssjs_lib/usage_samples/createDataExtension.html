@@ -1,0 +1,48 @@
+<script runat="server">
+  Platform.Load("core", "1.1")
+
+  var libPath = "Content Builder\\bldr_ssjs_lib\\ssjs_classes"
+  Platform.Function.ContentBlockByName(libPath + "\\config\\_api_config")
+  Platform.Function.ContentBlockByName(libPath + "\\_ssjs_api")
+  Platform.Function.ContentBlockByName(libPath + "\\_ssjs_util")
+  Platform.Function.ContentBlockByName(libPath + "\\_ssjs_wsproxy")
+
+  var apiConfig = getAPIConfig();
+  var api = api();
+  var ws = wsproxy();
+  var util = util();
+
+  var debug = 1;
+  var logExtKey = null;
+
+  try {
+
+    var createDataExtensionConfig = {
+      soapObjName: "DataExtension",
+      payload: {
+        Name: 'ssjs_lib_de',
+        CustomerKey: 'ssjs_lib_de',
+        Description: "ssjs_lib_de",
+        Fields: [{
+          FieldType: "Text",
+          Name: "ID",
+          MaxLength: 36,
+          IsPrimaryKey: true,
+          IsNillable: false,
+          IsRequired: true
+        },
+        {
+          FieldType: "Text",
+          Name: "Name",
+          MaxLength: 200
+        }]
+      } //required
+    }
+
+    var createDataExtensionResp = ws.create(createDataExtensionConfig)
+    util.deBug('Create Data Extension', createDataExtensionResp, logExtKey, debug)
+
+  } catch (err) {
+    util.deBug('Error', err, logExtKey, debug)
+  }
+</script>

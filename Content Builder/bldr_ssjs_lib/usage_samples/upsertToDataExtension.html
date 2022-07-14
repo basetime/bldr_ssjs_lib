@@ -1,0 +1,97 @@
+<script runat="server">
+  Platform.Load("core", "1.1")
+
+  var libPath = "Content Builder\\bldr_ssjs_lib\\ssjs_classes"
+  Platform.Function.ContentBlockByName(libPath + "\\config\\_api_config")
+  Platform.Function.ContentBlockByName(libPath + "\\_ssjs_api")
+  Platform.Function.ContentBlockByName(libPath + "\\_ssjs_util")
+  Platform.Function.ContentBlockByName(libPath + "\\_ssjs_wsproxy")
+
+
+  var apiConfig = getAPIConfig();
+  var api = api();
+  var ws = wsproxy();
+  var util = util();
+
+
+  var debug = 1;
+  var logExtKey = null;
+
+  try {
+    var upsertSingleRecord = {
+      soapObjName: "DataExtensionObject",
+      payload: {
+        CustomerKey: 'ssjs_lib_de',
+        Properties: [
+          {
+            Name: 'ID',
+            Value: Platform.Function.GUID()
+          },
+          {
+            Name: 'Name',
+            Value: 'Bob'
+          }
+        ]
+      },
+      options: {
+        SaveOptions: [
+          {
+            PropertyName: '*',
+            SaveAction: 'UpdateAdd'
+          }
+        ]
+      }
+    }
+
+    var upsertSingleRecord = ws.update(upsertSingleRecord)
+    util.deBug('Upsert Single Record', upsertSingleRecord, logExtKey, debug)
+
+
+    var upsertMultipleRecordsConfig = {
+      soapObjName: "DataExtensionObject",
+      payload: [
+        {
+          CustomerKey: 'ssjs_lib_de',
+          Properties: [
+            {
+              Name: 'ID',
+              Value: Platform.Function.GUID()
+            },
+            {
+              Name: 'Name',
+              Value: 'Dracula'
+            }
+          ]
+        },
+        {
+          CustomerKey: 'ssjs_lib_de',
+          Properties: [
+            {
+              Name: 'ID',
+              Value: Platform.Function.GUID()
+            },
+            {
+              Name: 'Name',
+              Value: 'Mavis'
+            }
+          ]
+        }
+      ],
+      options: {
+        SaveOptions: [
+          {
+            PropertyName: '*',
+            SaveAction: 'UpdateAdd'
+          }
+        ]
+      }
+    }
+
+    var upsertMultipleRecords = ws.update(upsertMultipleRecordsConfig)
+    util.deBug('Upsert Multiple Records', upsertMultipleRecords, logExtKey, debug)
+
+
+  } catch (err) {
+    util.deBug('Error', err, logExtKey, debug)
+  }
+</script>
