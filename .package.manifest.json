@@ -1,7 +1,8 @@
 {
   "name": "bldr_ssjs_lib",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "repositoryUrl": "",
+  "description": "A lightweight set of SSJS functions to streamline working with the REST API and wsProxy.",
   "sfmcConfig": {
     "authBase": "",
     "restBase": "",
