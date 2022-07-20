@@ -3,6 +3,12 @@
   "version": "1.0.6",
   "repositoryUrl": "",
   "description": "A lightweight set of SSJS functions to streamline working with the REST API and wsProxy.",
+  "tags": [
+    "ssjs",
+    "functions",
+    "wsproxy",
+    "api"
+  ],
   "sfmcConfig": {
     "authBase": "",
     "restBase": "",
